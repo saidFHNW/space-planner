@@ -13,6 +13,8 @@ export interface FurnitureDef {
 }
 
 export const furnitureCatalog: FurnitureDef[] = [
+  // ---Vertical Technik test module ---
+  { id: 'vt_wheelie_table', name: 'Wheelie Table 300 (K000879)', category: 'Outdoor Furniture', icon: '🛹', color: '#6b7280', width: 308, depth: 140, height: 38},
   // Living Room
   { id: 'sofa', name: 'Sofa', category: 'Living Room', icon: '🛋️', color: '#a78bfa', width: 200, depth: 90, height: 80 },
   { id: 'loveseat', name: 'Loveseat', category: 'Living Room', icon: '🛋️', color: '#8b5cf6', width: 140, depth: 85, height: 80 },

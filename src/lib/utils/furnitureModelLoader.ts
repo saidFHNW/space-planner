@@ -24,6 +24,8 @@ interface ModelMapping {
 }
 
 const MODEL_MAP: Record<string, ModelMapping> = {
+  //
+  vt_wheelie_table: {file: 'K000789_Wheelie_table_300_3m_Granit'},
   // Living Room
   sofa:           { file: 'loungeDesignSofa', scale: 110 },
   loveseat:       { file: 'loungeDesignSofa', scale: 100 },

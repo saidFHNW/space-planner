@@ -117,6 +117,7 @@ export async function generateThumbnail(file: string): Promise<string | null> {
 
 /** Get the GLB filename for a catalog ID (mirrors MODEL_MAP keys) */
 const MODEL_FILES: Record<string, string> = {
+  vt_wheelie_table: 'K00879_Wheelie_Table_300_3m_Granit',
   sofa: 'loungeDesignSofa',
   loveseat: 'loungeDesignSofa',
   chair: 'loungeChair',

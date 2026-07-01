@@ -160,8 +160,7 @@ const MODEL_MAP: Record<string, ModelMapping> = {
  * Returns null if no GLB mapping exists.
  */
 function loadGLBModel(catalogId: string): Promise<THREE.Group | null> {
-  const mapping = MODEL_MAP[catalogId];
-  if (!mapping) return Promise.resolve(null);
+  const mapping = MODEL_MAP[catalogId] ?? { file: catalogId };
 
   const cacheKey = mapping.file;
 
@@ -266,7 +265,7 @@ export function createFurnitureModelWithGLB(
   container.add(procedural);
 
   // Try to load GLB async
-  const mapping = MODEL_MAP[catalogId];
+  const mapping = MODEL_MAP[catalogId] ?? { file: catalogId };
   if (mapping) {
     loadGLBModel(catalogId).then((glbModel) => {
       if (glbModel) {

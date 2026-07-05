@@ -24,5 +24,6 @@ vite.config.ts.timestamp-*
 
 # Vertical Technik model files (large, delivered separately — not stored in git)
 static/models/K*.glb
+static/original-models/
 
 

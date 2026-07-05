@@ -1,0 +1,6405 @@
+[
+  {
+    "id": 181,
+    "name": "Enclosure for Quaterpipe 1700 3m",
+    "sku": "K00181",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "303",
+      "width": "353",
+      "height": "175"
+    },
+    "model_url": "/models/K00181.glb"
+  },
+  {
+    "id": 338,
+    "name": "Enclosure for Halfpipe Kingsize 4_ 4500 12m",
+    "sku": "K00338",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "3894",
+      "width": "2404",
+      "height": "513"
+    },
+    "model_url": "/models/K00338.glb"
+  },
+  {
+    "id": 340,
+    "name": "Enclosure for Halfpipe Kingsize 4_ 4500 15m",
+    "sku": "K00340",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "4064",
+      "width": "2404",
+      "height": "513"
+    },
+    "model_url": "/models/K00340.glb"
+  },
+  {
+    "id": 536,
+    "name": "Roof Box 600 + Handrail S",
+    "sku": "K00536",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "518",
+      "width": "132",
+      "height": "105"
+    },
+    "model_url": "/models/K00536.glb"
+  },
+  {
+    "id": 538,
+    "name": "Roof Box 600 + Ledge",
+    "sku": "K00538",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "510",
+      "width": "182",
+      "height": "100"
+    },
+    "model_url": "/models/K00538.glb"
+  },
+  {
+    "id": 539,
+    "name": "Roof Box 600 + Ledge + handrail",
+    "sku": "K00539",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "518",
+      "width": "290",
+      "height": "105"
+    },
+    "model_url": "/models/K00539.glb"
+  },
+  {
+    "id": 542,
+    "name": "Roof Box 600 + Ledge + handrail",
+    "sku": "K00542",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "517",
+      "width": "440",
+      "height": "106"
+    },
+    "model_url": "/models/K00542.glb"
+  },
+  {
+    "id": 543,
+    "name": "Roof Box 600 + Ledge + handrail + roof ledge",
+    "sku": "K00543",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "518",
+      "width": "520",
+      "height": "105"
+    },
+    "model_url": "/models/K00543.glb"
+  },
+  {
+    "id": 546,
+    "name": "Roof Box 600 Pyramid + Handrail",
+    "sku": "K00546",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "522",
+      "width": "424",
+      "height": "106"
+    },
+    "model_url": "/models/K00546.glb"
+  },
+  {
+    "id": 612,
+    "name": "Skatepark Fence",
+    "sku": "K00612",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "12",
+      "width": "654",
+      "height": "111"
+    },
+    "model_url": "/models/K00612.glb"
+  },
+  {
+    "id": 614,
+    "name": "Enclosure for Minirampe 1900 Hip mit Wallride und Extentions",
+    "sku": "K00614",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "2619",
+      "width": "1876",
+      "height": "314"
+    },
+    "model_url": "/models/K00614.glb"
+  },
+  {
+    "id": 630,
+    "name": "Minirampe 1600 9m + Right Extention 3,0m",
+    "sku": "K00630",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "915",
+      "width": "986",
+      "height": "340"
+    },
+    "model_url": "/models/K00630.glb"
+  },
+  {
+    "id": 654,
+    "name": "Miniramp 1650 Hip mit left Ext + right Ext 3.0m",
+    "sku": "K00654",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1125",
+      "width": "1132",
+      "height": "350"
+    },
+    "model_url": "/models/K00654.glb"
+  },
+  {
+    "id": 656,
+    "name": "Enclosure for Minirampe 1400 Jumpline",
+    "sku": "K00656",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "5341",
+      "width": "2979",
+      "height": "1517"
+    },
+    "model_url": "/models/K00656.glb"
+  },
+  {
+    "id": 678,
+    "name": "Side Rail for Handicaped Gap 1,32m",
+    "sku": "K00678",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "2068",
+      "width": "1640",
+      "height": "92"
+    },
+    "model_url": "/models/K00678.glb"
+  },
+  {
+    "id": 680,
+    "name": "Combi Rail for Handicaped Gap 1,32m",
+    "sku": "K00680",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "2068",
+      "width": "1585",
+      "height": "92"
+    },
+    "model_url": "/models/K00680.glb"
+  },
+  {
+    "id": 681,
+    "name": "Foot Plate for Fence",
+    "sku": "K00681",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "5",
+      "width": "218",
+      "height": "110"
+    },
+    "model_url": "/models/K00681.glb"
+  },
+  {
+    "id": 682,
+    "name": "Double Foot Plate for Fence",
+    "sku": "K00682",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "12",
+      "width": "441",
+      "height": "111"
+    },
+    "model_url": "/models/K00682.glb"
+  },
+  {
+    "id": 683,
+    "name": "Skatepark Fence 1100 x 2850",
+    "sku": "K00683",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "611",
+      "width": "855",
+      "height": "111"
+    },
+    "model_url": "/models/K00683.glb"
+  },
+  {
+    "id": 685,
+    "name": "Tor für Zaun 1100",
+    "sku": "K00685",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "614",
+      "width": "717",
+      "height": "125"
+    },
+    "model_url": "/models/K00685.glb"
+  },
+  {
+    "id": 687,
+    "name": "Türschliesser",
+    "sku": "K00687",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "88",
+      "width": "720",
+      "height": "125"
+    },
+    "model_url": "/models/K00687.glb"
+  },
+  {
+    "id": 690,
+    "name": "Banana Curb 300 x 1300 x 2600",
+    "sku": "K00690",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "132",
+      "width": "262",
+      "height": "30"
+    },
+    "model_url": "/models/K00690.glb"
+  },
+  {
+    "id": 700,
+    "name": "Support for info panel 50x80",
+    "sku": "K00700",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "58",
+      "width": "14",
+      "height": "200"
+    },
+    "model_url": "/models/K00700.glb"
+  },
+  {
+    "id": 701,
+    "name": "Support for info panel 70x100",
+    "sku": "K00701",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "78",
+      "width": "14",
+      "height": "200"
+    },
+    "model_url": "/models/K00701.glb"
+  },
+  {
+    "id": 703,
+    "name": "Flange with ground sleeve and foundation",
+    "sku": "K00703",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "25",
+      "width": "25",
+      "height": "52"
+    },
+    "model_url": "/models/K00703.glb"
+  },
+  {
+    "id": 708,
+    "name": "Barren 400x800",
+    "sku": "K00708",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "89",
+      "width": "81",
+      "height": "48"
+    },
+    "model_url": "/models/K00708.glb"
+  },
+  {
+    "id": 709,
+    "name": "Revision UFB QP 1500 3m",
+    "sku": "K00709",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "311",
+      "width": "373",
+      "height": "271"
+    },
+    "model_url": "/models/K00709.glb"
+  },
+  {
+    "id": 710,
+    "name": "Beinheber",
+    "sku": "K00710",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "77",
+      "width": "64",
+      "height": "144"
+    },
+    "model_url": "/models/K00710.glb"
+  },
+  {
+    "id": 712,
+    "name": "Parallel Bars 1200 power",
+    "sku": "K00712",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "177",
+      "height": "130"
+    },
+    "model_url": "/models/K00712.glb"
+  },
+  {
+    "id": 714,
+    "name": "Pillar 2.5m",
+    "sku": "K00714",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "20",
+      "width": "20",
+      "height": "259"
+    },
+    "model_url": "/models/K00714.glb"
+  },
+  {
+    "id": 717,
+    "name": "Pillar 2.0m",
+    "sku": "K00717",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "20",
+      "width": "20",
+      "height": "209"
+    },
+    "model_url": "/models/K00717.glb"
+  },
+  {
+    "id": 718,
+    "name": "Bar 1.52m",
+    "sku": "K00718",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "150",
+      "height": "6"
+    },
+    "model_url": "/models/K00718.glb"
+  },
+  {
+    "id": 719,
+    "name": "Monkey Bar",
+    "sku": "K00719",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "172",
+      "width": "300",
+      "height": "16"
+    },
+    "model_url": "/models/K00719.glb"
+  },
+  {
+    "id": 720,
+    "name": "Barren 900",
+    "sku": "K00720",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "160",
+      "height": "109"
+    },
+    "model_url": "/models/K00720.glb"
+  },
+  {
+    "id": 722,
+    "name": "Wall bars 580 x 3",
+    "sku": "K00722",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "58",
+      "height": "73"
+    },
+    "model_url": "/models/K00722.glb"
+  },
+  {
+    "id": 723,
+    "name": "Wall bars 820 x 3",
+    "sku": "K00723",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "82",
+      "height": "73"
+    },
+    "model_url": "/models/K00723.glb"
+  },
+  {
+    "id": 725,
+    "name": "Wall bars 500 x 7",
+    "sku": "K00725",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "50",
+      "height": "188"
+    },
+    "model_url": "/models/K00725.glb"
+  },
+  {
+    "id": 726,
+    "name": "Wall bars 500 x 5",
+    "sku": "K00726",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "50",
+      "height": "188"
+    },
+    "model_url": "/models/K00726.glb"
+  },
+  {
+    "id": 727,
+    "name": "Bank",
+    "sku": "K00727",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "38",
+      "width": "126",
+      "height": "63"
+    },
+    "model_url": "/models/K00727.glb"
+  },
+  {
+    "id": 728,
+    "name": "Dip Bar",
+    "sku": "K00728",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "45",
+      "height": "73"
+    },
+    "model_url": "/models/K00728.glb"
+  },
+  {
+    "id": 729,
+    "name": "Dip Bar",
+    "sku": "K00729",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "57",
+      "height": "73"
+    },
+    "model_url": "/models/K00729.glb"
+  },
+  {
+    "id": 731,
+    "name": "Randabschlüss",
+    "sku": "K00731",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "11",
+      "width": "110",
+      "height": "9"
+    },
+    "model_url": "/models/K00731.glb"
+  },
+  {
+    "id": 732,
+    "name": "Randabschlüss Bogen",
+    "sku": "K00732",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "236",
+      "width": "938",
+      "height": "9"
+    },
+    "model_url": "/models/K00732.glb"
+  },
+  {
+    "id": 734,
+    "name": "Luke der Verschalung",
+    "sku": "K00734",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "98",
+      "width": "1",
+      "height": "68"
+    },
+    "model_url": "/models/K00734.glb"
+  },
+  {
+    "id": 735,
+    "name": "Skate Plaza 8",
+    "sku": "K00735",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K00735.glb"
+  },
+  {
+    "id": 736,
+    "name": "Bar and Stair",
+    "sku": "K00736",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "300",
+      "height": "204"
+    },
+    "model_url": "/models/K00736.glb"
+  },
+  {
+    "id": 737,
+    "name": "Fall protection surface",
+    "sku": "K00737",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "100",
+      "width": "100",
+      "height": "8"
+    },
+    "model_url": "/models/K00737.glb"
+  },
+  {
+    "id": 738,
+    "name": "Monkey Bar (Element)",
+    "sku": "K00738",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "172",
+      "width": "300",
+      "height": "24"
+    },
+    "model_url": "/models/K00738.glb"
+  },
+  {
+    "id": 739,
+    "name": "Ladder (Element)",
+    "sku": "K00739",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "95",
+      "height": "234"
+    },
+    "model_url": "/models/K00739.glb"
+  },
+  {
+    "id": 740,
+    "name": "Wall bars 880 x 8",
+    "sku": "K00740",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "88",
+      "height": "217"
+    },
+    "model_url": "/models/K00740.glb"
+  },
+  {
+    "id": 741,
+    "name": "Bar 3.0m",
+    "sku": "K00741",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "300",
+      "height": "6"
+    },
+    "model_url": "/models/K00741.glb"
+  },
+  {
+    "id": 742,
+    "name": "Fall Protection Surface + Tube 01",
+    "sku": "K00742",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "650",
+      "width": "931",
+      "height": "8"
+    },
+    "model_url": "/models/K00742.glb"
+  },
+  {
+    "id": 743,
+    "name": "Fall Protection Surface",
+    "sku": "K00743",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "650",
+      "width": "931",
+      "height": "8"
+    },
+    "model_url": "/models/K00743.glb"
+  },
+  {
+    "id": 744,
+    "name": "Tube 01",
+    "sku": "K00744",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "650",
+      "width": "931",
+      "height": "9"
+    },
+    "model_url": "/models/K00744.glb"
+  },
+  {
+    "id": 745,
+    "name": "Fall Protection Surface + Tube 02",
+    "sku": "K00745",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "650",
+      "width": "2004",
+      "height": "9"
+    },
+    "model_url": "/models/K00745.glb"
+  },
+  {
+    "id": 746,
+    "name": "Snake",
+    "sku": "K00746",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "63",
+      "width": "225",
+      "height": "21"
+    },
+    "model_url": "/models/K00746.glb"
+  },
+  {
+    "id": 747,
+    "name": "Parking Block",
+    "sku": "K00747",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00747.glb"
+  },
+  {
+    "id": 749,
+    "name": "U Bar 800",
+    "sku": "K00749",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "194",
+      "height": "88"
+    },
+    "model_url": "/models/K00749.glb"
+  },
+  {
+    "id": 750,
+    "name": "U Bar 400",
+    "sku": "K00750",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "194",
+      "height": "48"
+    },
+    "model_url": "/models/K00750.glb"
+  },
+  {
+    "id": 751,
+    "name": "Snake + Monkey Bar",
+    "sku": "K00751",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "358",
+      "width": "300",
+      "height": "16"
+    },
+    "model_url": "/models/K00751.glb"
+  },
+  {
+    "id": 752,
+    "name": "Ladder (Element)",
+    "sku": "K00752",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "84",
+      "height": "228"
+    },
+    "model_url": "/models/K00752.glb"
+  },
+  {
+    "id": 753,
+    "name": "Univers",
+    "sku": "K00753",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K00753.glb"
+  },
+  {
+    "id": 754,
+    "name": "Centaur2",
+    "sku": "K00754",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "10",
+      "width": "12",
+      "height": "3"
+    },
+    "model_url": "/models/K00754.glb"
+  },
+  {
+    "id": 755,
+    "name": "Street Akkurat",
+    "sku": "K00755",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K00755.glb"
+  },
+  {
+    "id": 756,
+    "name": "Amplitude",
+    "sku": "K00756",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "674",
+      "width": "640",
+      "height": "250"
+    },
+    "model_url": "/models/K00756.glb"
+  },
+  {
+    "id": 757,
+    "name": "Street Workout 06",
+    "sku": "K00757",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "182",
+      "width": "328",
+      "height": "259"
+    },
+    "model_url": "/models/K00757.glb"
+  },
+  {
+    "id": 758,
+    "name": "Street Workout 07",
+    "sku": "K00758",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "182",
+      "width": "334",
+      "height": "259"
+    },
+    "model_url": "/models/K00758.glb"
+  },
+  {
+    "id": 759,
+    "name": "Street Workout 08",
+    "sku": "K00759",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "182",
+      "width": "328",
+      "height": "259"
+    },
+    "model_url": "/models/K00759.glb"
+  },
+  {
+    "id": 760,
+    "name": "Street Workout 09",
+    "sku": "K00760",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "182",
+      "width": "334",
+      "height": "259"
+    },
+    "model_url": "/models/K00760.glb"
+  },
+  {
+    "id": 761,
+    "name": "Street Workout 10",
+    "sku": "K00761",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "244",
+      "width": "381",
+      "height": "259"
+    },
+    "model_url": "/models/K00761.glb"
+  },
+  {
+    "id": 762,
+    "name": "Street Workout 11",
+    "sku": "K00762",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "244",
+      "width": "386",
+      "height": "259"
+    },
+    "model_url": "/models/K00762.glb"
+  },
+  {
+    "id": 763,
+    "name": "Street Workout 12",
+    "sku": "K00763",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "244",
+      "width": "479",
+      "height": "259"
+    },
+    "model_url": "/models/K00763.glb"
+  },
+  {
+    "id": 764,
+    "name": "Street Workout 13",
+    "sku": "K00764",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "244",
+      "width": "328",
+      "height": "259"
+    },
+    "model_url": "/models/K00764.glb"
+  },
+  {
+    "id": 765,
+    "name": "Street Workout 14",
+    "sku": "K00765",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "244",
+      "width": "333",
+      "height": "259"
+    },
+    "model_url": "/models/K00765.glb"
+  },
+  {
+    "id": 774,
+    "name": "Fall protection border 6.5x11.25",
+    "sku": "K00774",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "932",
+      "width": "646",
+      "height": "9"
+    },
+    "model_url": "/models/K00774.glb"
+  },
+  {
+    "id": 787,
+    "name": "Exchange Under Riding Surface Quarterpipe 1500x3m",
+    "sku": "K00787",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "311",
+      "width": "373",
+      "height": "271"
+    },
+    "model_url": "/models/K00787.glb"
+  },
+  {
+    "id": 796,
+    "name": "Enclosure for Quarterpipe Combo 1700 - 2000",
+    "sku": "K00796",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "600",
+      "width": "389",
+      "height": "218"
+    },
+    "model_url": "/models/K00796.glb"
+  },
+  {
+    "id": 797,
+    "name": "Ledge Granit 3-3 up-flat-down",
+    "sku": "K00797",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "1700",
+      "width": "3118",
+      "height": "106"
+    },
+    "model_url": "/models/K00797.glb"
+  },
+  {
+    "id": 798,
+    "name": "Einbauteile mit dem Flansch",
+    "sku": "K00798",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "20",
+      "width": "20",
+      "height": "50"
+    },
+    "model_url": "/models/K00798.glb"
+  },
+  {
+    "id": 802,
+    "name": "B1 Parking Block zu Spine",
+    "sku": "K00802",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "15",
+      "height": "1"
+    },
+    "model_url": "/models/K00802.glb"
+  },
+  {
+    "id": 804,
+    "name": "C1 Curb",
+    "sku": "K00804",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "5",
+      "width": "30",
+      "height": "1"
+    },
+    "model_url": "/models/K00804.glb"
+  },
+  {
+    "id": 805,
+    "name": "C2 Fuss",
+    "sku": "K00805",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "4",
+      "width": "2",
+      "height": "4"
+    },
+    "model_url": "/models/K00805.glb"
+  },
+  {
+    "id": 806,
+    "name": "C3a Curb curved Kantenbruch links",
+    "sku": "K00806",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "16",
+      "height": "1"
+    },
+    "model_url": "/models/K00806.glb"
+  },
+  {
+    "id": 807,
+    "name": "C3b curved Kantenbruch rechts",
+    "sku": "K00807",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "16",
+      "height": "1"
+    },
+    "model_url": "/models/K00807.glb"
+  },
+  {
+    "id": 808,
+    "name": "C4 Curb Beton",
+    "sku": "K00808",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "5",
+      "width": "30",
+      "height": "1"
+    },
+    "model_url": "/models/K00808.glb"
+  },
+  {
+    "id": 809,
+    "name": "K1 Fuss zu Kicker",
+    "sku": "K00809",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "14",
+      "height": "1"
+    },
+    "model_url": "/models/K00809.glb"
+  },
+  {
+    "id": 810,
+    "name": "K2 Schiefe Ebene zu Kicker-Bank A-Frame",
+    "sku": "K00810",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "15",
+      "height": "3"
+    },
+    "model_url": "/models/K00810.glb"
+  },
+  {
+    "id": 811,
+    "name": "M1 Manual Pad",
+    "sku": "K00811",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "12",
+      "width": "24",
+      "height": "1"
+    },
+    "model_url": "/models/K00811.glb"
+  },
+  {
+    "id": 812,
+    "name": "M2 Fuss zu Manual Pad",
+    "sku": "K00812",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "2",
+      "width": "12",
+      "height": "1"
+    },
+    "model_url": "/models/K00812.glb"
+  },
+  {
+    "id": 813,
+    "name": "P1 Plattform Bank",
+    "sku": "K00813",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "12",
+      "width": "15",
+      "height": "1"
+    },
+    "model_url": "/models/K00813.glb"
+  },
+  {
+    "id": 814,
+    "name": "P2 Fuss zu Bank klein",
+    "sku": "K00814",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "4",
+      "width": "12",
+      "height": "1"
+    },
+    "model_url": "/models/K00814.glb"
+  },
+  {
+    "id": 815,
+    "name": "P3 Fuss zu Bank Gross",
+    "sku": "K00815",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "7",
+      "width": "12",
+      "height": "1"
+    },
+    "model_url": "/models/K00815.glb"
+  },
+  {
+    "id": 816,
+    "name": "R1 Rail",
+    "sku": "K00816",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00816.glb"
+  },
+  {
+    "id": 817,
+    "name": "T1 Schiefe Ebene Bank-SpinRail Spine",
+    "sku": "K00817",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "233",
+      "width": "261",
+      "height": "8"
+    },
+    "model_url": "/models/K00817.glb"
+  },
+  {
+    "id": 818,
+    "name": "W1 Schiefe Ebene Curb Wall",
+    "sku": "K00818",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "6",
+      "width": "15",
+      "height": "1"
+    },
+    "model_url": "/models/K00818.glb"
+  },
+  {
+    "id": 819,
+    "name": "W2 Fuss zu Schiefer Ebene Curb Wall",
+    "sku": "K00819",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "4",
+      "height": "2"
+    },
+    "model_url": "/models/K00819.glb"
+  },
+  {
+    "id": 821,
+    "name": "W4 Fuss zu oberer Schiefen Ebene Bank",
+    "sku": "K00821",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "10",
+      "height": "5"
+    },
+    "model_url": "/models/K00821.glb"
+  },
+  {
+    "id": 822,
+    "name": "W5 Fuss hinten zu Rail Spine",
+    "sku": "K00822",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "4",
+      "width": "15",
+      "height": "1"
+    },
+    "model_url": "/models/K00822.glb"
+  },
+  {
+    "id": 823,
+    "name": "W6 Fuss zu Schiefer Ebene Rail Spine",
+    "sku": "K00823",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "4",
+      "height": "3"
+    },
+    "model_url": "/models/K00823.glb"
+  },
+  {
+    "id": 824,
+    "name": "W7 Fuss zu Spine",
+    "sku": "K00824",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "6",
+      "height": "3"
+    },
+    "model_url": "/models/K00824.glb"
+  },
+  {
+    "id": 825,
+    "name": "Z1 Parking Curb",
+    "sku": "K00825",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00825.glb"
+  },
+  {
+    "id": 831,
+    "name": "A-Frame",
+    "sku": "K00831",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00831.glb"
+  },
+  {
+    "id": 832,
+    "name": "Granit Curb",
+    "sku": "K00832",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "318",
+      "width": "479",
+      "height": "8"
+    },
+    "model_url": "/models/K00832.glb"
+  },
+  {
+    "id": 833,
+    "name": "Granit Curb Wall",
+    "sku": "K00833",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00833.glb"
+  },
+  {
+    "id": 834,
+    "name": "Granit Curved Curb",
+    "sku": "K00834",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00834.glb"
+  },
+  {
+    "id": 835,
+    "name": "Granit Bank",
+    "sku": "K00835",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00835.glb"
+  },
+  {
+    "id": 836,
+    "name": "Granit Bank Curb",
+    "sku": "K00836",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00836.glb"
+  },
+  {
+    "id": 837,
+    "name": "Granit Kicker",
+    "sku": "K00837",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00837.glb"
+  },
+  {
+    "id": 838,
+    "name": "Manual Pad",
+    "sku": "K00838",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00838.glb"
+  },
+  {
+    "id": 839,
+    "name": "Granit Rail Spine",
+    "sku": "K00839",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "201",
+      "width": "146",
+      "height": "4"
+    },
+    "model_url": "/models/K00839.glb"
+  },
+  {
+    "id": 840,
+    "name": "Granite Spine",
+    "sku": "K00840",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00840.glb"
+  },
+  {
+    "id": 841,
+    "name": "Transition Granit Element",
+    "sku": "K00841",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "203",
+      "width": "139",
+      "height": "4"
+    },
+    "model_url": "/models/K00841.glb"
+  },
+  {
+    "id": 842,
+    "name": "Granit Rail",
+    "sku": "K00842",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00842.glb"
+  },
+  {
+    "id": 843,
+    "name": "Step Curb 3",
+    "sku": "K00843",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00843.glb"
+  },
+  {
+    "id": 844,
+    "name": "Step Curb 4",
+    "sku": "K00844",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00844.glb"
+  },
+  {
+    "id": 845,
+    "name": "Volcano Street Spine 800 2.64m",
+    "sku": "K00845",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "4767",
+      "width": "410",
+      "height": "129"
+    },
+    "model_url": "/models/K00845.glb"
+  },
+  {
+    "id": 846,
+    "name": "Verschalung Volcano Street Spine 800",
+    "sku": "K00846",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "4766",
+      "width": "410",
+      "height": "129"
+    },
+    "model_url": "/models/K00846.glb"
+  },
+  {
+    "id": 849,
+    "name": "Miniramp 1600 Hip mit Ext 900",
+    "sku": "K00849",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1716",
+      "width": "1291",
+      "height": "389"
+    },
+    "model_url": "/models/K00849.glb"
+  },
+  {
+    "id": 857,
+    "name": "Poolcoping ersetzten",
+    "sku": "K00857",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "287",
+      "width": "109",
+      "height": "5"
+    },
+    "model_url": "/models/K00857.glb"
+  },
+  {
+    "id": 859,
+    "name": "Microrampe 950 Austausch Unterfahrbelag Flat",
+    "sku": "K00859",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1527",
+      "width": "4428",
+      "height": "96"
+    },
+    "model_url": "/models/K00859.glb"
+  },
+  {
+    "id": 862,
+    "name": "Exchange Under Riding Surface Miniramp 1400 6.0m",
+    "sku": "K00862",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1527",
+      "width": "4429",
+      "height": "252"
+    },
+    "model_url": "/models/K00862.glb"
+  },
+  {
+    "id": 865,
+    "name": "Exchange Under Riding Surface Miniramp 1900 6.0m",
+    "sku": "K00865",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1527",
+      "width": "4428",
+      "height": "312"
+    },
+    "model_url": "/models/K00865.glb"
+  },
+  {
+    "id": 871,
+    "name": "Enclosure Minirampe 1600 9m + Right Extention 3,0m Offset",
+    "sku": "K00871",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "915",
+      "width": "1037",
+      "height": "340"
+    },
+    "model_url": "/models/K00871.glb"
+  },
+  {
+    "id": 873,
+    "name": "Granit Element V1",
+    "sku": "K00873",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "208",
+      "width": "146",
+      "height": "8"
+    },
+    "model_url": "/models/K00873.glb"
+  },
+  {
+    "id": 874,
+    "name": "Granit Element V2",
+    "sku": "K00874",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "210",
+      "width": "146",
+      "height": "5"
+    },
+    "model_url": "/models/K00874.glb"
+  },
+  {
+    "id": 875,
+    "name": "Granit Element V3",
+    "sku": "K00875",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "199",
+      "width": "146",
+      "height": "4"
+    },
+    "model_url": "/models/K00875.glb"
+  },
+  {
+    "id": 876,
+    "name": "Granit Element V3",
+    "sku": "K00876",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "210",
+      "width": "146",
+      "height": "5"
+    },
+    "model_url": "/models/K00876.glb"
+  },
+  {
+    "id": 878,
+    "name": "Wheelie Table 400 3m Granit",
+    "sku": "K00878",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "140",
+      "width": "308",
+      "height": "48"
+    },
+    "model_url": "/models/K00878.glb"
+  },
+  {
+    "id": 879,
+    "name": "Wheelie Table 300 3m Granit",
+    "sku": "K00879",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "140",
+      "width": "308",
+      "height": "38"
+    },
+    "model_url": "/models/K00879.glb"
+  },
+  {
+    "id": 880,
+    "name": "Granit Upgrade Wheelie Table 200 3m + Rail",
+    "sku": "K00880",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "145",
+      "width": "500",
+      "height": "40"
+    },
+    "model_url": "/models/K00880.glb"
+  },
+  {
+    "id": 884,
+    "name": "Handicapped Gap 500 1.32 m with Rail",
+    "sku": "K00884",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "673",
+      "width": "544",
+      "height": "92"
+    },
+    "model_url": "/models/K00884.glb"
+  },
+  {
+    "id": 885,
+    "name": "Granit Upgrade Wheelie Table 300 3m",
+    "sku": "K00885",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "140",
+      "width": "308",
+      "height": "28"
+    },
+    "model_url": "/models/K00885.glb"
+  },
+  {
+    "id": 886,
+    "name": "Granit Upgrade Wheelie Table steel 200 x 2.5m",
+    "sku": "K00886",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "312",
+      "width": "308",
+      "height": "38"
+    },
+    "model_url": "/models/K00886.glb"
+  },
+  {
+    "id": 887,
+    "name": "Granit Upgrade Wheelie Table steel 200 x 2.5m + Stone Ledge",
+    "sku": "K00887",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "166",
+      "width": "257",
+      "height": "53"
+    },
+    "model_url": "/models/K00887.glb"
+  },
+  {
+    "id": 899,
+    "name": "Single Climbing Cube with Base, Anchor and Holds",
+    "sku": "K00899",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "542",
+      "width": "461",
+      "height": "153"
+    },
+    "model_url": "/models/K00899.glb"
+  },
+  {
+    "id": 901,
+    "name": "3-fold Climbing Cube with Base, Anchor and Holds",
+    "sku": "K00901",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "965",
+      "width": "647",
+      "height": "260"
+    },
+    "model_url": "/models/K00901.glb"
+  },
+  {
+    "id": 902,
+    "name": "4-Würfel",
+    "sku": "K00902",
+    "price": "",
+    "categories": [
+      {
+        "id": 18,
+        "name": "Climbing & Boulder",
+        "slug": "climbing-boulder"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K00902.glb"
+  },
+  {
+    "id": 903,
+    "name": "5- Climbing Cube with Base, Anchor and Holds",
+    "sku": "K00903",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "965",
+      "width": "647",
+      "height": "260"
+    },
+    "model_url": "/models/K00903.glb"
+  },
+  {
+    "id": 904,
+    "name": "6-Climbing Cube with Base, Anchor and Holds",
+    "sku": "K00904",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1104",
+      "width": "762",
+      "height": "262"
+    },
+    "model_url": "/models/K00904.glb"
+  },
+  {
+    "id": 905,
+    "name": "London Gap Skateface® 450 1.42m",
+    "sku": "K00905",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "608",
+      "width": "1101",
+      "height": "92"
+    },
+    "model_url": "/models/K00905.glb"
+  },
+  {
+    "id": 906,
+    "name": "Planter with Granite Curbs 1 Tree",
+    "sku": "K00906",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "1"
+    },
+    "model_url": "/models/K00906.glb"
+  },
+  {
+    "id": 907,
+    "name": "Planter with Granite Curbs 3 Tree",
+    "sku": "K00907",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "1",
+      "height": "1"
+    },
+    "model_url": "/models/K00907.glb"
+  },
+  {
+    "id": 926,
+    "name": "Mobile Boulderwand",
+    "sku": "K00926",
+    "price": "",
+    "categories": [
+      {
+        "id": 18,
+        "name": "Climbing & Boulder",
+        "slug": "climbing-boulder"
+      }
+    ],
+    "dimensions": {
+      "length": "396",
+      "width": "706",
+      "height": "351"
+    },
+    "model_url": "/models/K00926.glb"
+  },
+  {
+    "id": 1364,
+    "name": "2-Würfel mit Anker",
+    "sku": "K01364",
+    "price": "",
+    "categories": [
+      {
+        "id": 18,
+        "name": "Climbing & Boulder",
+        "slug": "climbing-boulder"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01364.glb"
+  },
+  {
+    "id": 1409,
+    "name": "Street Workout DIY 01",
+    "sku": "K01409",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "144",
+      "width": "138",
+      "height": "260"
+    },
+    "model_url": "/models/K01409.glb"
+  },
+  {
+    "id": 1413,
+    "name": "Halfpipe Kingsize4 4500 9.0m",
+    "sku": "K01413",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1031",
+      "width": "1453",
+      "height": "569"
+    },
+    "model_url": "/models/K01413.glb"
+  },
+  {
+    "id": 1418,
+    "name": "Support with info panel 70x100",
+    "sku": "K01418",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "78",
+      "width": "14",
+      "height": "200"
+    },
+    "model_url": "/models/K01418.glb"
+  },
+  {
+    "id": 1419,
+    "name": "Info panel 50x80 with support (Verzinkt)",
+    "sku": "K01419",
+    "price": "",
+    "categories": [
+      {
+        "id": 19,
+        "name": "Signage",
+        "slug": "signage"
+      }
+    ],
+    "dimensions": {
+      "length": "15",
+      "width": "57",
+      "height": "283"
+    },
+    "model_url": "/models/K01419.glb"
+  },
+  {
+    "id": 1421,
+    "name": "Stangen verzinkt",
+    "sku": "K01421",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "6390",
+      "width": "13665",
+      "height": "210"
+    },
+    "model_url": "/models/K01421.glb"
+  },
+  {
+    "id": 1422,
+    "name": "Stangen pulverbeschichtet",
+    "sku": "K01422",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "6390",
+      "width": "13665",
+      "height": "282"
+    },
+    "model_url": "/models/K01422.glb"
+  },
+  {
+    "id": 1423,
+    "name": "Street Workout DIY 02",
+    "sku": "K01423",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "224",
+      "width": "349",
+      "height": "260"
+    },
+    "model_url": "/models/K01423.glb"
+  },
+  {
+    "id": 1424,
+    "name": "Post 2.6",
+    "sku": "K01424",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "10",
+      "width": "16",
+      "height": "260"
+    },
+    "model_url": "/models/K01424.glb"
+  },
+  {
+    "id": 1425,
+    "name": "Bar 2.0",
+    "sku": "K01425",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "200",
+      "height": "6"
+    },
+    "model_url": "/models/K01425.glb"
+  },
+  {
+    "id": 1426,
+    "name": "Bar 1.4m",
+    "sku": "K01426",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "150",
+      "height": "6"
+    },
+    "model_url": "/models/K01426.glb"
+  },
+  {
+    "id": 1427,
+    "name": "Bar 0.52m",
+    "sku": "K01427",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "53",
+      "height": "6"
+    },
+    "model_url": "/models/K01427.glb"
+  },
+  {
+    "id": 1428,
+    "name": "Dip Bar L 1200",
+    "sku": "K01428",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "16",
+      "width": "131",
+      "height": "139"
+    },
+    "model_url": "/models/K01428.glb"
+  },
+  {
+    "id": 1430,
+    "name": "Quarterpipe 600 Wood",
+    "sku": "K01430",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "2",
+      "height": "0"
+    },
+    "model_url": "/models/K01430.glb"
+  },
+  {
+    "id": 1431,
+    "name": "Flatrail Height Adjustable",
+    "sku": "K01431",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "203",
+      "width": "40",
+      "height": "45"
+    },
+    "model_url": "/models/K01431.glb"
+  },
+  {
+    "id": 1434,
+    "name": "Granit Manual table 400 x 4700",
+    "sku": "K01434",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01434.glb"
+  },
+  {
+    "id": 1435,
+    "name": "Flatrail Height Adjustable 2.0m",
+    "sku": "K01435",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "203",
+      "width": "40",
+      "height": "45"
+    },
+    "model_url": "/models/K01435.glb"
+  },
+  {
+    "id": 1436,
+    "name": "Flatrail Height Adjustable 2.0m",
+    "sku": "K01436",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "200",
+      "width": "40",
+      "height": "44"
+    },
+    "model_url": "/models/K01436.glb"
+  },
+  {
+    "id": 1437,
+    "name": "Street Workout DIY 03",
+    "sku": "K01437",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "704",
+      "width": "620",
+      "height": "300"
+    },
+    "model_url": "/models/K01437.glb"
+  },
+  {
+    "id": 1442,
+    "name": "Street Workout DIY 04",
+    "sku": "K01442",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "354",
+      "width": "228",
+      "height": "320"
+    },
+    "model_url": "/models/K01442.glb"
+  },
+  {
+    "id": 1443,
+    "name": "Arial",
+    "sku": "K01443",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K01443.glb"
+  },
+  {
+    "id": 1444,
+    "name": "Street Workout 16",
+    "sku": "K01444",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4035",
+      "width": "2792",
+      "height": "310"
+    },
+    "model_url": "/models/K01444.glb"
+  },
+  {
+    "id": 1445,
+    "name": "Stangen pulverbeschichtet",
+    "sku": "K01445",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "237",
+      "width": "117",
+      "height": "121"
+    },
+    "model_url": "/models/K01445.glb"
+  },
+  {
+    "id": 1446,
+    "name": "Fall protection border 6.5x9.2",
+    "sku": "K01446",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "732",
+      "width": "646",
+      "height": "9"
+    },
+    "model_url": "/models/K01446.glb"
+  },
+  {
+    "id": 1447,
+    "name": "Street Workout DIY 05",
+    "sku": "K01447",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "3861",
+      "width": "2875",
+      "height": "310"
+    },
+    "model_url": "/models/K01447.glb"
+  },
+  {
+    "id": 1470,
+    "name": "Exchange Under Riding Surface Microramp 950x3.96m",
+    "sku": "K01470",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "394",
+      "width": "827",
+      "height": "96"
+    },
+    "model_url": "/models/K01470.glb"
+  },
+  {
+    "id": 1476,
+    "name": "Exchange Under Riding Surface QP 1700x3m",
+    "sku": "K01476",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "311",
+      "width": "369",
+      "height": "293"
+    },
+    "model_url": "/models/K01476.glb"
+  },
+  {
+    "id": 1479,
+    "name": "Flag Pole (powder coated) with Info Panel",
+    "sku": "K01479",
+    "price": "",
+    "categories": [
+      {
+        "id": 19,
+        "name": "Signage",
+        "slug": "signage"
+      }
+    ],
+    "dimensions": {
+      "length": "57",
+      "width": "6",
+      "height": "287"
+    },
+    "model_url": "/models/K01479.glb"
+  },
+  {
+    "id": 1481,
+    "name": "Parallel Bars 1200 light",
+    "sku": "K01481",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "177",
+      "height": "130"
+    },
+    "model_url": "/models/K01481.glb"
+  },
+  {
+    "id": 1484,
+    "name": "Flagpole",
+    "sku": "K01484",
+    "price": "",
+    "categories": [
+      {
+        "id": 19,
+        "name": "Signage",
+        "slug": "signage"
+      }
+    ],
+    "dimensions": {
+      "length": "14",
+      "width": "57",
+      "height": "288"
+    },
+    "model_url": "/models/K01484.glb"
+  },
+  {
+    "id": 1485,
+    "name": "Street Workout DIY 06",
+    "sku": "K01485",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "289",
+      "width": "217",
+      "height": "260"
+    },
+    "model_url": "/models/K01485.glb"
+  },
+  {
+    "id": 1486,
+    "name": "Street Workout 18",
+    "sku": "K01486",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4035",
+      "width": "2792",
+      "height": "310"
+    },
+    "model_url": "/models/K01486.glb"
+  },
+  {
+    "id": 1487,
+    "name": "Screws 6x60 for rubber protection",
+    "sku": "K01487",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "10",
+      "width": "133",
+      "height": "1"
+    },
+    "model_url": "/models/K01487.glb"
+  },
+  {
+    "id": 1488,
+    "name": "Screws 6x100 for rubber protection",
+    "sku": "K01488",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "10",
+      "width": "133",
+      "height": "1"
+    },
+    "model_url": "/models/K01488.glb"
+  },
+  {
+    "id": 1489,
+    "name": "Washer for rubber protection",
+    "sku": "K01489",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "26",
+      "width": "74",
+      "height": "18"
+    },
+    "model_url": "/models/K01489.glb"
+  },
+  {
+    "id": 1490,
+    "name": "Sitting Bench 1.62",
+    "sku": "K01490",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "40",
+      "width": "163",
+      "height": "38"
+    },
+    "model_url": "/models/K01490.glb"
+  },
+  {
+    "id": 1491,
+    "name": "Fence 2.58 x1.2m",
+    "sku": "K01491",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "611",
+      "width": "953",
+      "height": "122"
+    },
+    "model_url": "/models/K01491.glb"
+  },
+  {
+    "id": 1492,
+    "name": "Monckey Bar Street Workout DIY",
+    "sku": "K01492",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "3857",
+      "width": "2737",
+      "height": "309"
+    },
+    "model_url": "/models/K01492.glb"
+  },
+  {
+    "id": 1493,
+    "name": "Kids Triple Pull Up Bar (verzinkt)",
+    "sku": "K01493",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "237",
+      "width": "117",
+      "height": "121"
+    },
+    "model_url": "/models/K01493.glb"
+  },
+  {
+    "id": 1494,
+    "name": "Street Workout (für Küssenacht am Rigi)",
+    "sku": "K01494",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4198",
+      "width": "2871",
+      "height": "284"
+    },
+    "model_url": "/models/K01494.glb"
+  },
+  {
+    "id": 1495,
+    "name": "Push Up Stangen",
+    "sku": "K01495",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "3805",
+      "width": "2871",
+      "height": "260"
+    },
+    "model_url": "/models/K01495.glb"
+  },
+  {
+    "id": 1496,
+    "name": "Steel skirt straight made of raw steel",
+    "sku": "K01496",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "53",
+      "width": "452",
+      "height": "18"
+    },
+    "model_url": "/models/K01496.glb"
+  },
+  {
+    "id": 1497,
+    "name": "Steel skirt rounded made of raw steel",
+    "sku": "K01497",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "232",
+      "width": "897",
+      "height": "19"
+    },
+    "model_url": "/models/K01497.glb"
+  },
+  {
+    "id": 1498,
+    "name": "Himmelsleiter",
+    "sku": "K01498",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "26",
+      "width": "2",
+      "height": "165"
+    },
+    "model_url": "/models/K01498.glb"
+  },
+  {
+    "id": 1499,
+    "name": "Parkour Anlage 01",
+    "sku": "K01499",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "755",
+      "width": "1194",
+      "height": "250"
+    },
+    "model_url": "/models/K01499.glb"
+  },
+  {
+    "id": 1500,
+    "name": "Excelsior",
+    "sku": "K01500",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K01500.glb"
+  },
+  {
+    "id": 1505,
+    "name": "SW 07",
+    "sku": "K01505",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "201",
+      "width": "704",
+      "height": "260"
+    },
+    "model_url": "/models/K01505.glb"
+  },
+  {
+    "id": 1506,
+    "name": "Single Pole 01",
+    "sku": "K01506",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "85",
+      "width": "172",
+      "height": "240"
+    },
+    "model_url": "/models/K01506.glb"
+  },
+  {
+    "id": 1507,
+    "name": "SW Kids 01",
+    "sku": "K01507",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "226",
+      "width": "243",
+      "height": "226"
+    },
+    "model_url": "/models/K01507.glb"
+  },
+  {
+    "id": 1508,
+    "name": "SW Kids 02",
+    "sku": "K01508",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "296",
+      "width": "243",
+      "height": "226"
+    },
+    "model_url": "/models/K01508.glb"
+  },
+  {
+    "id": 1509,
+    "name": "SW 19",
+    "sku": "K01509",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4107",
+      "width": "2652",
+      "height": "260"
+    },
+    "model_url": "/models/K01509.glb"
+  },
+  {
+    "id": 1511,
+    "name": "Granit Manual table 350",
+    "sku": "K01511",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "240",
+      "width": "120",
+      "height": "35"
+    },
+    "model_url": "/models/K01511.glb"
+  },
+  {
+    "id": 1512,
+    "name": "MR1900 4.5m",
+    "sku": "K01512",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "4266",
+      "width": "2160",
+      "height": "1754"
+    },
+    "model_url": "/models/K01512.glb"
+  },
+  {
+    "id": 1513,
+    "name": "Bench with Ladder",
+    "sku": "K01513",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "133",
+      "width": "70",
+      "height": "104"
+    },
+    "model_url": "/models/K01513.glb"
+  },
+  {
+    "id": 1515,
+    "name": "Street Workout DIY 07",
+    "sku": "K01515",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4107",
+      "width": "2652",
+      "height": "260"
+    },
+    "model_url": "/models/K01515.glb"
+  },
+  {
+    "id": 1516,
+    "name": "Street Workout 20",
+    "sku": "K01516",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4318",
+      "width": "2863",
+      "height": "283"
+    },
+    "model_url": "/models/K01516.glb"
+  },
+  {
+    "id": 1517,
+    "name": "Monkey Bar with Hightbars",
+    "sku": "K01517",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "242",
+      "width": "300",
+      "height": "50"
+    },
+    "model_url": "/models/K01517.glb"
+  },
+  {
+    "id": 1518,
+    "name": "KSP P Set Minirampe 1400",
+    "sku": "K01518",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "4917",
+      "width": "3749",
+      "height": "1756"
+    },
+    "model_url": "/models/K01518.glb"
+  },
+  {
+    "id": 1519,
+    "name": "KSP P Set Minirampe 1900",
+    "sku": "K01519",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "4917",
+      "width": "3880",
+      "height": "1756"
+    },
+    "model_url": "/models/K01519.glb"
+  },
+  {
+    "id": 1522,
+    "name": "Street Workout DIY 08",
+    "sku": "K01522",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4318",
+      "width": "2859",
+      "height": "285"
+    },
+    "model_url": "/models/K01522.glb"
+  },
+  {
+    "id": 1523,
+    "name": "Street Workout DIY 09",
+    "sku": "K01523",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4105",
+      "width": "2647",
+      "height": "270"
+    },
+    "model_url": "/models/K01523.glb"
+  },
+  {
+    "id": 1526,
+    "name": "Street Workout DIY Set 01",
+    "sku": "K01526",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "1405",
+      "width": "633",
+      "height": "288"
+    },
+    "model_url": "/models/K01526.glb"
+  },
+  {
+    "id": 1528,
+    "name": "Street Workout DIY 10",
+    "sku": "K01528",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "224",
+      "width": "349",
+      "height": "260"
+    },
+    "model_url": "/models/K01528.glb"
+  },
+  {
+    "id": 1534,
+    "name": "Support for 2 info panel (70x100 and 50x80) with info panels",
+    "sku": "K01534",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "14",
+      "width": "107",
+      "height": "288"
+    },
+    "model_url": "/models/K01534.glb"
+  },
+  {
+    "id": 1535,
+    "name": "Support for 2 info panel (70x100 and 50x80)",
+    "sku": "K01535",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "14",
+      "width": "107",
+      "height": "288"
+    },
+    "model_url": "/models/K01535.glb"
+  },
+  {
+    "id": 1537,
+    "name": "Sitzbank aus Granit 3m",
+    "sku": "K01537",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01537.glb"
+  },
+  {
+    "id": 1538,
+    "name": "Winkel Deckel anschweissen",
+    "sku": "K01538",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "311",
+      "width": "373",
+      "height": "293"
+    },
+    "model_url": "/models/K01538.glb"
+  },
+  {
+    "id": 1539,
+    "name": "Rohrenden Deckel anschweissen",
+    "sku": "K01539",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "202",
+      "width": "40",
+      "height": "45"
+    },
+    "model_url": "/models/K01539.glb"
+  },
+  {
+    "id": 1540,
+    "name": "Monkey Bar+ High Bars",
+    "sku": "K01540",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "220",
+      "width": "300",
+      "height": "39"
+    },
+    "model_url": "/models/K01540.glb"
+  },
+  {
+    "id": 1541,
+    "name": "Street Workout DIY Set 02 Wiese",
+    "sku": "K01541",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "9982",
+      "width": "9446",
+      "height": "296"
+    },
+    "model_url": "/models/K01541.glb"
+  },
+  {
+    "id": 1542,
+    "name": "Street Workout DIY Set 03 Wiese",
+    "sku": "K01542",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "9982",
+      "width": "9446",
+      "height": "289"
+    },
+    "model_url": "/models/K01542.glb"
+  },
+  {
+    "id": 1543,
+    "name": "Highbars",
+    "sku": "K01543",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "9982",
+      "width": "9446",
+      "height": "296"
+    },
+    "model_url": "/models/K01543.glb"
+  },
+  {
+    "id": 1550,
+    "name": "Barmeno",
+    "sku": "K01550",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K01550.glb"
+  },
+  {
+    "id": 1552,
+    "name": "Verschalung MR Spine 1100",
+    "sku": "K01552",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "1790",
+      "width": "1462",
+      "height": "122"
+    },
+    "model_url": "/models/K01552.glb"
+  },
+  {
+    "id": 1553,
+    "name": "Step Curb 5",
+    "sku": "K01553",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01553.glb"
+  },
+  {
+    "id": 1554,
+    "name": "Step Curb 6",
+    "sku": "K01554",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01554.glb"
+  },
+  {
+    "id": 1555,
+    "name": "Street Workout 22",
+    "sku": "K01555",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "5001",
+      "width": "7950",
+      "height": "348"
+    },
+    "model_url": "/models/K01555.glb"
+  },
+  {
+    "id": 1556,
+    "name": "Street Workout 23",
+    "sku": "K01556",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "136",
+      "width": "80",
+      "height": "131"
+    },
+    "model_url": "/models/K01556.glb"
+  },
+  {
+    "id": 1557,
+    "name": "Street Workout 24",
+    "sku": "K01557",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "974",
+      "width": "571",
+      "height": "240"
+    },
+    "model_url": "/models/K01557.glb"
+  },
+  {
+    "id": 1558,
+    "name": "U Bar 1200 Combi",
+    "sku": "K01558",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "247",
+      "height": "128"
+    },
+    "model_url": "/models/K01558.glb"
+  },
+  {
+    "id": 1559,
+    "name": "Infotafel",
+    "sku": "K01559",
+    "price": "",
+    "categories": [
+      {
+        "id": 19,
+        "name": "Signage",
+        "slug": "signage"
+      }
+    ],
+    "dimensions": {
+      "length": "20",
+      "width": "134",
+      "height": "180"
+    },
+    "model_url": "/models/K01559.glb"
+  },
+  {
+    "id": 1561,
+    "name": "Street Workout Set 05",
+    "sku": "K01561",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "1021",
+      "width": "1000",
+      "height": "312"
+    },
+    "model_url": "/models/K01561.glb"
+  },
+  {
+    "id": 1562,
+    "name": "Avenir neu 2024",
+    "sku": "K01562",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K01562.glb"
+  },
+  {
+    "id": 1563,
+    "name": "Granit Curb 6m",
+    "sku": "K01563",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "318",
+      "width": "479",
+      "height": "8"
+    },
+    "model_url": "/models/K01563.glb"
+  },
+  {
+    "id": 1564,
+    "name": "Bank 950 25° 6m with Granit Curb",
+    "sku": "K01564",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "601",
+      "width": "366",
+      "height": "217"
+    },
+    "model_url": "/models/K01564.glb"
+  },
+  {
+    "id": 1569,
+    "name": "7-Climbing Cube with Base, Anchor and Holds",
+    "sku": "K01569",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "1104",
+      "width": "762",
+      "height": "262"
+    },
+    "model_url": "/models/K01569.glb"
+  },
+  {
+    "id": 1577,
+    "name": "Miniramp 1400 12m + 3 Extensions 3m 0.5m + 1 Extension 4.5m 1m",
+    "sku": "K01577",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "4294",
+      "width": "999",
+      "height": "379"
+    },
+    "model_url": "/models/K01577.glb"
+  },
+  {
+    "id": 1585,
+    "name": "Granit Curb Lite 350 3.0m",
+    "sku": "K01585",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "299",
+      "height": "35"
+    },
+    "model_url": "/models/K01585.glb"
+  },
+  {
+    "id": 1586,
+    "name": "Granit Curb Lite 300 3.0m",
+    "sku": "K01586",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "299",
+      "height": "30"
+    },
+    "model_url": "/models/K01586.glb"
+  },
+  {
+    "id": 1587,
+    "name": "Monckey, Snake und High Bars",
+    "sku": "K01587",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "169",
+      "width": "369",
+      "height": "45"
+    },
+    "model_url": "/models/K01587.glb"
+  },
+  {
+    "id": 1593,
+    "name": "Rail straight square tube height adjustable 3m",
+    "sku": "K01593",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "300",
+      "width": "40",
+      "height": "44"
+    },
+    "model_url": "/models/K01593.glb"
+  },
+  {
+    "id": 1596,
+    "name": "Storage room with door and KABA lock",
+    "sku": "K01596",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "613",
+      "width": "901",
+      "height": "252"
+    },
+    "model_url": "/models/K01596.glb"
+  },
+  {
+    "id": 1597,
+    "name": "Granit Stone Ledge 350 500x3000",
+    "sku": "K01597",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K01597.glb"
+  },
+  {
+    "id": 1598,
+    "name": "Street Workout Set 07 Wiese",
+    "sku": "K01598",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "1152",
+      "width": "648",
+      "height": "293"
+    },
+    "model_url": "/models/K01598.glb"
+  },
+  {
+    "id": 2002,
+    "name": "Rockwell",
+    "sku": "K02002",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02002.glb"
+  },
+  {
+    "id": 2004,
+    "name": "Granite Wheelie Table combo 300-500 PLO",
+    "sku": "K02004",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K02004.glb"
+  },
+  {
+    "id": 2005,
+    "name": "Bree",
+    "sku": "K02005",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02005.glb"
+  },
+  {
+    "id": 2006,
+    "name": "Protective pad",
+    "sku": "K02006",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "100",
+      "width": "100",
+      "height": "8"
+    },
+    "model_url": "/models/K02006.glb"
+  },
+  {
+    "id": 2010,
+    "name": "Ballon",
+    "sku": "K02010",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02010.glb"
+  },
+  {
+    "id": 2012,
+    "name": "Microrampe 950 3.96m + Stellfüssen + Geländer",
+    "sku": "K02012",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "405",
+      "width": "835",
+      "height": "224"
+    },
+    "model_url": "/models/K02012.glb"
+  },
+  {
+    "id": 2020,
+    "name": "6-KW",
+    "sku": "K02020",
+    "price": "",
+    "categories": [
+      {
+        "id": 18,
+        "name": "Climbing & Boulder",
+        "slug": "climbing-boulder"
+      }
+    ],
+    "dimensions": {
+      "length": "913",
+      "width": "638",
+      "height": "256"
+    },
+    "model_url": "/models/K02020.glb"
+  },
+  {
+    "id": 2022,
+    "name": "Mounting Base",
+    "sku": "K02022",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "43",
+      "width": "80",
+      "height": "18"
+    },
+    "model_url": "/models/K02022.glb"
+  },
+  {
+    "id": 2023,
+    "name": "Street Workout light 01",
+    "sku": "K02023",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4318",
+      "width": "2859",
+      "height": "285"
+    },
+    "model_url": "/models/K02023.glb"
+  },
+  {
+    "id": 2025,
+    "name": "Dip Bars 1200 with Bench",
+    "sku": "K02025",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4063",
+      "width": "2744",
+      "height": "260"
+    },
+    "model_url": "/models/K02025.glb"
+  },
+  {
+    "id": 2026,
+    "name": "Mounting bracket for Granite Curved Curb",
+    "sku": "K02026",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "68",
+      "width": "150",
+      "height": "15"
+    },
+    "model_url": "/models/K02026.glb"
+  },
+  {
+    "id": 2027,
+    "name": "Granit Curb 300 3.0m",
+    "sku": "K02027",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "299",
+      "height": "30"
+    },
+    "model_url": "/models/K02027.glb"
+  },
+  {
+    "id": 2028,
+    "name": "Granit Curb 350 3.0m",
+    "sku": "K02028",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "299",
+      "height": "35"
+    },
+    "model_url": "/models/K02028.glb"
+  },
+  {
+    "id": 2029,
+    "name": "Granit Curb 400 3.0m",
+    "sku": "K02029",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "299",
+      "height": "40"
+    },
+    "model_url": "/models/K02029.glb"
+  },
+  {
+    "id": 2031,
+    "name": "Miniramp1100 6m + Ext.1.5m + Bank with Granite Curb",
+    "sku": "K02031",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1159",
+      "width": "612",
+      "height": "282"
+    },
+    "model_url": "/models/K02031.glb"
+  },
+  {
+    "id": 2032,
+    "name": "VerschalungMiniramp1100 6m + Ext.1.5m + Bank with Granite Curb",
+    "sku": "K02032",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "5361",
+      "width": "5407",
+      "height": "282"
+    },
+    "model_url": "/models/K02032.glb"
+  },
+  {
+    "id": 2033,
+    "name": "Geländer zu K01564 Bank Granite Curb",
+    "sku": "K02033",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "606",
+      "width": "366",
+      "height": "206"
+    },
+    "model_url": "/models/K02033.glb"
+  },
+  {
+    "id": 2034,
+    "name": "geländer zu MR950 3.96",
+    "sku": "K02034",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "1527",
+      "width": "4432",
+      "height": "204"
+    },
+    "model_url": "/models/K02034.glb"
+  },
+  {
+    "id": 2038,
+    "name": "Ring Bench 5m - Granit",
+    "sku": "K02038",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02038.glb"
+  },
+  {
+    "id": 2039,
+    "name": "Stepper",
+    "sku": "K02039",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "30",
+      "width": "30",
+      "height": "50"
+    },
+    "model_url": "/models/K02039.glb"
+  },
+  {
+    "id": 2042,
+    "name": "Miniramp Spine 1100 mit Wave",
+    "sku": "K02042",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "539",
+      "width": "1448",
+      "height": "227"
+    },
+    "model_url": "/models/K02042.glb"
+  },
+  {
+    "id": 2043,
+    "name": "Street Wave 500 2.4m",
+    "sku": "K02043",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "242",
+      "width": "339",
+      "height": "49"
+    },
+    "model_url": "/models/K02043.glb"
+  },
+  {
+    "id": 2044,
+    "name": "Geländer Bank 950 25° 2.64m Hip 30°",
+    "sku": "K02044",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "495",
+      "width": "439",
+      "height": "207"
+    },
+    "model_url": "/models/K02044.glb"
+  },
+  {
+    "id": 2045,
+    "name": "Bank 950 25° 2 x 2.64m Hip 30° with railing",
+    "sku": "K02045",
+    "price": "",
+    "categories": [
+      {
+        "id": 11,
+        "name": "Rails",
+        "slug": "rails"
+      }
+    ],
+    "dimensions": {
+      "length": "499",
+      "width": "441",
+      "height": "215"
+    },
+    "model_url": "/models/K02045.glb"
+  },
+  {
+    "id": 2046,
+    "name": "Miniramp 1100 mit Wave",
+    "sku": "K02046",
+    "price": "",
+    "categories": [
+      {
+        "id": 13,
+        "name": "Ramps & Transitions",
+        "slug": "ramps-transitions"
+      }
+    ],
+    "dimensions": {
+      "length": "273",
+      "width": "1448",
+      "height": "227"
+    },
+    "model_url": "/models/K02046.glb"
+  },
+  {
+    "id": 2047,
+    "name": "Snake See-Saw",
+    "sku": "K02047",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "404",
+      "width": "806",
+      "height": "145"
+    },
+    "model_url": "/models/K02047.glb"
+  },
+  {
+    "id": 2048,
+    "name": "Snake See-Saw",
+    "sku": "K02048",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "404",
+      "width": "806",
+      "height": "145"
+    },
+    "model_url": "/models/K02048.glb"
+  },
+  {
+    "id": 2049,
+    "name": "Amplitude Light",
+    "sku": "K02049",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "656",
+      "width": "640",
+      "height": "250"
+    },
+    "model_url": "/models/K02049.glb"
+  },
+  {
+    "id": 2050,
+    "name": "Akkurat Light",
+    "sku": "K02050",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "977",
+      "width": "530",
+      "height": "250"
+    },
+    "model_url": "/models/K02050.glb"
+  },
+  {
+    "id": 2051,
+    "name": "Arial Light",
+    "sku": "K02051",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1049",
+      "width": "640",
+      "height": "264"
+    },
+    "model_url": "/models/K02051.glb"
+  },
+  {
+    "id": 2052,
+    "name": "Barmeno Light",
+    "sku": "K02052",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "1049",
+      "width": "670",
+      "height": "264"
+    },
+    "model_url": "/models/K02052.glb"
+  },
+  {
+    "id": 2053,
+    "name": "Ballon Light",
+    "sku": "K02053",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "773",
+      "width": "745",
+      "height": "232"
+    },
+    "model_url": "/models/K02053.glb"
+  },
+  {
+    "id": 2054,
+    "name": "Aster Light",
+    "sku": "K02054",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1358",
+      "width": "610",
+      "height": "230"
+    },
+    "model_url": "/models/K02054.glb"
+  },
+  {
+    "id": 2055,
+    "name": "Avenir Light neue 2024",
+    "sku": "K02055",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02055.glb"
+  },
+  {
+    "id": 2056,
+    "name": "Swift Light",
+    "sku": "K02056",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "896",
+      "width": "650",
+      "height": "230"
+    },
+    "model_url": "/models/K02056.glb"
+  },
+  {
+    "id": 2057,
+    "name": "Univers Light",
+    "sku": "K02057",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1341",
+      "width": "650",
+      "height": "250"
+    },
+    "model_url": "/models/K02057.glb"
+  },
+  {
+    "id": 2058,
+    "name": "Rockwell Light",
+    "sku": "K02058",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02058.glb"
+  },
+  {
+    "id": 2059,
+    "name": "Bree Light",
+    "sku": "K02059",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1292",
+      "width": "629",
+      "height": "230"
+    },
+    "model_url": "/models/K02059.glb"
+  },
+  {
+    "id": 2060,
+    "name": "Excelsior Light",
+    "sku": "K02060",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02060.glb"
+  },
+  {
+    "id": 2061,
+    "name": "Centaur Light",
+    "sku": "K02061",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "1225",
+      "width": "1050",
+      "height": "250"
+    },
+    "model_url": "/models/K02061.glb"
+  },
+  {
+    "id": 2075,
+    "name": "Granite Wheelie Table round 400 200 3000",
+    "sku": "K02075",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K02075.glb"
+  },
+  {
+    "id": 2076,
+    "name": "Granite Wheelie Table round 400 3000",
+    "sku": "K02076",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "300",
+      "width": "150",
+      "height": "40"
+    },
+    "model_url": "/models/K02076.glb"
+  },
+  {
+    "id": 2077,
+    "name": "Granite Wheelie Table round 200 3000",
+    "sku": "K02077",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "300",
+      "width": "150",
+      "height": "20"
+    },
+    "model_url": "/models/K02077.glb"
+  },
+  {
+    "id": 2079,
+    "name": "Ring Bench 4m - Granit",
+    "sku": "K02079",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "7",
+      "height": "0"
+    },
+    "model_url": "/models/K02079.glb"
+  },
+  {
+    "id": 2080,
+    "name": "Ring Bench 2 Trees - Granit",
+    "sku": "K02080",
+    "price": "",
+    "categories": [
+      {
+        "id": 17,
+        "name": "Seating & Planters",
+        "slug": "seating-planters"
+      }
+    ],
+    "dimensions": {
+      "length": "1",
+      "width": "1",
+      "height": "0"
+    },
+    "model_url": "/models/K02080.glb"
+  },
+  {
+    "id": 2081,
+    "name": "Dip Bars 1200 mit Bench Light",
+    "sku": "K02081",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "4063",
+      "width": "2744",
+      "height": "260"
+    },
+    "model_url": "/models/K02081.glb"
+  },
+  {
+    "id": 2082,
+    "name": "Parking Block 2m",
+    "sku": "K02082",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K02082.glb"
+  },
+  {
+    "id": 2085,
+    "name": "Granite Wheelie Table 350 x 800 x 4700",
+    "sku": "K02085",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K02085.glb"
+  },
+  {
+    "id": 2086,
+    "name": "Granite Wheelie Table 200 x 800 x 3500",
+    "sku": "K02086",
+    "price": "",
+    "categories": [
+      {
+        "id": 12,
+        "name": "Curbs, Ledges & Tables",
+        "slug": "curbs-ledges-tables"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K02086.glb"
+  },
+  {
+    "id": 2088,
+    "name": "Enclosure Bank 950 25° 5m mit Curb",
+    "sku": "K02088",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "1381",
+      "width": "402",
+      "height": "217"
+    },
+    "model_url": "/models/K02088.glb"
+  },
+  {
+    "id": 2090,
+    "name": "Dip Bars 1200 light",
+    "sku": "K02090",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "177",
+      "width": "1373",
+      "height": "130"
+    },
+    "model_url": "/models/K02090.glb"
+  },
+  {
+    "id": 2091,
+    "name": "Dip Bars 1200 power",
+    "sku": "K02091",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "177",
+      "width": "1373",
+      "height": "130"
+    },
+    "model_url": "/models/K02091.glb"
+  },
+  {
+    "id": 2092,
+    "name": "Pfosten zum Zaun",
+    "sku": "K02092",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "5",
+      "width": "461",
+      "height": "152"
+    },
+    "model_url": "/models/K02092.glb"
+  },
+  {
+    "id": 2093,
+    "name": "Zaunstück",
+    "sku": "K02093",
+    "price": "",
+    "categories": [
+      {
+        "id": 10,
+        "name": "Fences & Enclosures",
+        "slug": "fences-enclosures"
+      }
+    ],
+    "dimensions": {
+      "length": "5",
+      "width": "889",
+      "height": "149"
+    },
+    "model_url": "/models/K02093.glb"
+  },
+  {
+    "id": 2099,
+    "name": "Fallschutzmatte Boulder Indoor",
+    "sku": "K02099",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "100",
+      "width": "100",
+      "height": "8"
+    },
+    "model_url": "/models/K02099.glb"
+  },
+  {
+    "id": 2100,
+    "name": "Fallschutzmatte Boulder Outdoor",
+    "sku": "K02100",
+    "price": "",
+    "categories": [
+      {
+        "id": 14,
+        "name": "Foundations & Parts",
+        "slug": "foundations-parts"
+      }
+    ],
+    "dimensions": {
+      "length": "100",
+      "width": "100",
+      "height": "8"
+    },
+    "model_url": "/models/K02100.glb"
+  },
+  {
+    "id": 2106,
+    "name": "Human Flag Pole Stahl verzinkt",
+    "sku": "K02106",
+    "price": "",
+    "categories": [
+      {
+        "id": 19,
+        "name": "Signage",
+        "slug": "signage"
+      }
+    ],
+    "dimensions": {
+      "length": "50",
+      "width": "50",
+      "height": "302"
+    },
+    "model_url": "/models/K02106.glb"
+  },
+  {
+    "id": 2107,
+    "name": "Street Workout Ringe Power",
+    "sku": "K02107",
+    "price": "",
+    "categories": [
+      {
+        "id": 15,
+        "name": "Street Workout & Fitness",
+        "slug": "street-workout-fitness"
+      }
+    ],
+    "dimensions": {
+      "length": "2988",
+      "width": "9559",
+      "height": "305"
+    },
+    "model_url": "/models/K02107.glb"
+  },
+  {
+    "id": 5000,
+    "name": "K05000",
+    "sku": "K05000",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "290",
+      "width": "10",
+      "height": "231"
+    },
+    "model_url": "/models/K05000.glb"
+  },
+  {
+    "id": 5001,
+    "name": "K05001",
+    "sku": "K05001",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "430",
+      "width": "10",
+      "height": "231"
+    },
+    "model_url": "/models/K05001.glb"
+  },
+  {
+    "id": 5002,
+    "name": "K05002",
+    "sku": "K05002",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "570",
+      "width": "10",
+      "height": "231"
+    },
+    "model_url": "/models/K05002.glb"
+  },
+  {
+    "id": 5003,
+    "name": "K05003",
+    "sku": "K05003",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "64",
+      "width": "222",
+      "height": "123"
+    },
+    "model_url": "/models/K05003.glb"
+  },
+  {
+    "id": 5004,
+    "name": "K05004",
+    "sku": "K05004",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "121",
+      "width": "220",
+      "height": "80"
+    },
+    "model_url": "/models/K05004.glb"
+  },
+  {
+    "id": 5005,
+    "name": "K05005",
+    "sku": "K05005",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "61",
+      "width": "220",
+      "height": "130"
+    },
+    "model_url": "/models/K05005.glb"
+  },
+  {
+    "id": 5006,
+    "name": "K05006",
+    "sku": "K05006",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "67",
+      "width": "94",
+      "height": "126"
+    },
+    "model_url": "/models/K05006.glb"
+  },
+  {
+    "id": 5007,
+    "name": "K05007",
+    "sku": "K05007",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "12",
+      "width": "167",
+      "height": "106"
+    },
+    "model_url": "/models/K05007.glb"
+  },
+  {
+    "id": 5008,
+    "name": "K05008",
+    "sku": "K05008",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "54",
+      "width": "74",
+      "height": "15"
+    },
+    "model_url": "/models/K05008.glb"
+  },
+  {
+    "id": 5009,
+    "name": "K05009",
+    "sku": "K05009",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05009.glb"
+  },
+  {
+    "id": 5010,
+    "name": "K05010",
+    "sku": "K05010",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05010.glb"
+  },
+  {
+    "id": 5011,
+    "name": "K05011",
+    "sku": "K05011",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05011.glb"
+  },
+  {
+    "id": 5013,
+    "name": "K05013",
+    "sku": "K05013",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "70",
+      "width": "210",
+      "height": "153"
+    },
+    "model_url": "/models/K05013.glb"
+  },
+  {
+    "id": 5014,
+    "name": "K05014",
+    "sku": "K05014",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "70",
+      "width": "310",
+      "height": "208"
+    },
+    "model_url": "/models/K05014.glb"
+  },
+  {
+    "id": 5015,
+    "name": "K05015",
+    "sku": "K05015",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "62",
+      "width": "60",
+      "height": "186"
+    },
+    "model_url": "/models/K05015.glb"
+  },
+  {
+    "id": 5016,
+    "name": "K05016",
+    "sku": "K05016",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "163",
+      "width": "176",
+      "height": "106"
+    },
+    "model_url": "/models/K05016.glb"
+  },
+  {
+    "id": 5017,
+    "name": "K05017",
+    "sku": "K05017",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "238",
+      "width": "465",
+      "height": "125"
+    },
+    "model_url": "/models/K05017.glb"
+  },
+  {
+    "id": 5018,
+    "name": "K05018",
+    "sku": "K05018",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "75",
+      "width": "131",
+      "height": "128"
+    },
+    "model_url": "/models/K05018.glb"
+  },
+  {
+    "id": 5019,
+    "name": "K05019",
+    "sku": "K05019",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "92",
+      "width": "66",
+      "height": "148"
+    },
+    "model_url": "/models/K05019.glb"
+  },
+  {
+    "id": 5020,
+    "name": "K05020",
+    "sku": "K05020",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05020.glb"
+  },
+  {
+    "id": 5021,
+    "name": "K05021",
+    "sku": "K05021",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "62",
+      "width": "85",
+      "height": "207"
+    },
+    "model_url": "/models/K05021.glb"
+  },
+  {
+    "id": 5022,
+    "name": "K05022",
+    "sku": "K05022",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "87",
+      "width": "89",
+      "height": "166"
+    },
+    "model_url": "/models/K05022.glb"
+  },
+  {
+    "id": 5023,
+    "name": "K05023",
+    "sku": "K05023",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "34",
+      "width": "49",
+      "height": "156"
+    },
+    "model_url": "/models/K05023.glb"
+  },
+  {
+    "id": 5024,
+    "name": "K05024",
+    "sku": "K05024",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "18",
+      "width": "20",
+      "height": "298"
+    },
+    "model_url": "/models/K05024.glb"
+  },
+  {
+    "id": 5025,
+    "name": "K05025",
+    "sku": "K05025",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "48",
+      "width": "125",
+      "height": "163"
+    },
+    "model_url": "/models/K05025.glb"
+  },
+  {
+    "id": 5026,
+    "name": "K05026",
+    "sku": "K05026",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "102",
+      "width": "141",
+      "height": "92"
+    },
+    "model_url": "/models/K05026.glb"
+  },
+  {
+    "id": 5027,
+    "name": "K05027",
+    "sku": "K05027",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "60",
+      "width": "133",
+      "height": "98"
+    },
+    "model_url": "/models/K05027.glb"
+  },
+  {
+    "id": 5028,
+    "name": "K05028",
+    "sku": "K05028",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "74",
+      "width": "95",
+      "height": "186"
+    },
+    "model_url": "/models/K05028.glb"
+  },
+  {
+    "id": 5029,
+    "name": "K05029",
+    "sku": "K05029",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "63",
+      "width": "102",
+      "height": "171"
+    },
+    "model_url": "/models/K05029.glb"
+  },
+  {
+    "id": 5030,
+    "name": "K05030",
+    "sku": "K05030",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "101",
+      "width": "98",
+      "height": "224"
+    },
+    "model_url": "/models/K05030.glb"
+  },
+  {
+    "id": 5031,
+    "name": "K05031",
+    "sku": "K05031",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "66",
+      "width": "137",
+      "height": "125"
+    },
+    "model_url": "/models/K05031.glb"
+  },
+  {
+    "id": 5033,
+    "name": "K05033",
+    "sku": "K05033",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "30",
+      "width": "42",
+      "height": "106"
+    },
+    "model_url": "/models/K05033.glb"
+  },
+  {
+    "id": 5034,
+    "name": "K05034",
+    "sku": "K05034",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "118",
+      "width": "72",
+      "height": "152"
+    },
+    "model_url": "/models/K05034.glb"
+  },
+  {
+    "id": 5035,
+    "name": "K05035",
+    "sku": "K05035",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05035.glb"
+  },
+  {
+    "id": 5036,
+    "name": "K05036",
+    "sku": "K05036",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "141",
+      "width": "66",
+      "height": "166"
+    },
+    "model_url": "/models/K05036.glb"
+  },
+  {
+    "id": 5038,
+    "name": "K05038",
+    "sku": "K05038",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K05038.glb"
+  },
+  {
+    "id": 5039,
+    "name": "K05039",
+    "sku": "K05039",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "74",
+      "width": "74",
+      "height": "173"
+    },
+    "model_url": "/models/K05039.glb"
+  },
+  {
+    "id": 5040,
+    "name": "K05040",
+    "sku": "K05040",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "45",
+      "width": "147",
+      "height": "132"
+    },
+    "model_url": "/models/K05040.glb"
+  },
+  {
+    "id": 5041,
+    "name": "K05041",
+    "sku": "K05041",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "59",
+      "width": "175",
+      "height": "64"
+    },
+    "model_url": "/models/K05041.glb"
+  },
+  {
+    "id": 5042,
+    "name": "K05042",
+    "sku": "K05042",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "121",
+      "width": "66",
+      "height": "157"
+    },
+    "model_url": "/models/K05042.glb"
+  },
+  {
+    "id": 8023,
+    "name": "K08023",
+    "sku": "K08023",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K08023.glb"
+  },
+  {
+    "id": 8027,
+    "name": "K08027",
+    "sku": "K08027",
+    "price": "",
+    "categories": [
+      {
+        "id": 16,
+        "name": "Other",
+        "slug": "other"
+      }
+    ],
+    "dimensions": {
+      "length": "0",
+      "width": "0",
+      "height": "0"
+    },
+    "model_url": "/models/K08027.glb"
+  }
+]

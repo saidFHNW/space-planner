@@ -14,8 +14,20 @@
   import { projectSettings, formatLength, formatArea } from '$lib/stores/settings';
   import type { ProjectSettings } from '$lib/stores/settings';
   import type { CanvasState } from '$lib/utils/canvasInteraction';
-  import { drawWall as _drawWall, drawDoorOnWall as _drawDoorOnWall, drawWindowOnWall as _drawWindowOnWall, drawDoorDistanceDimensions as _drawDoorDistanceDimensions, drawWindowDistanceDimensions as _drawWindowDistanceDimensions, drawFurnitureItem, drawStair as _drawStair, drawColumn as _drawColumn, drawGuides as _drawGuides, drawPersistedMeasurements as _drawPersistedMeasurements, drawTextAnnotations as _drawTextAnnotations, drawAnnotation as _drawAnnotation, drawAnnotations as _drawAnnotations, drawRooms as _drawRooms, drawWallJoints as _drawWallJoints, drawSnapPoints as _drawSnapPoints, drawMinimap as _drawMinimap } from '$lib/utils/canvasRenderer';
+  import { drawWall as _drawWall, drawDoorOnWall as _drawDoorOnWall, drawWindowOnWall as _drawWindowOnWall, drawDoorDistanceDimensions as _drawDoorDistanceDimensions, drawWindowDistanceDimensions as _drawWindowDistanceDimensions, drawFurnitureItem, drawSecurityZone, drawStair as _drawStair, drawColumn as _drawColumn, drawGuides as _drawGuides, drawPersistedMeasurements as _drawPersistedMeasurements, drawTextAnnotations as _drawTextAnnotations, drawAnnotation as _drawAnnotation, drawAnnotations as _drawAnnotations, drawRooms as _drawRooms, drawWallJoints as _drawWallJoints, drawSnapPoints as _drawSnapPoints, drawMinimap as _drawMinimap } from '$lib/utils/canvasRenderer';
   import { pointInPolygon, positionOnWall, findWallAt as _findWallAt, findHandleAt as _findHandleAt, findFurnitureAt as _findFurnitureAt, findColumnAt as _findColumnAt, findStairAt as _findStairAt, findDoorAt as _findDoorAt, findWindowAt as _findWindowAt, findRoomAt as _findRoomAt, hitTestMeasurement as _hitTestMeasurement, hitTestAnnotation as _hitTestAnnotation, hitTestTextAnnotation as _hitTestTextAnnotation } from '$lib/utils/hitTesting';
+  import { collisionState } from '$lib/stores/collision';
+  import { getSecurityZoneCm} from "$lib/utils/collision";
+
+let conflictIds = $state<Set<string>>(new Set());
+  let conflictPairs = $state<import('$lib/utils/collision').ConflictPair[]>([]);
+  collisionState.subscribe((r) => { conflictIds = r.conflictIds; conflictPairs = r.pairs; });
+  let overlapCount = $derived(conflictPairs.filter(p => p.type === 'overlap').length);
+  let zoneCount = $derived(conflictPairs.filter(p => p.type === 'zone').length);
+  let worstZone = $derived(
+    conflictPairs.filter(p => p.type === 'zone')
+      .sort((a, b) => (a.actualCm ?? 0) - (b.actualCm ?? 0))[0] ?? null
+  );
 
   let canvas: HTMLCanvasElement;
   let ctx: CanvasRenderingContext2D;
@@ -507,7 +519,7 @@
   }
 
   function drawFurniture(item: FurnitureItem, selected: boolean) {
-    drawFurnitureItem(getCS(), item, selected);
+    drawFurnitureItem(getCS(), item, selected, conflictIds.has(item.id));
   }
 
   // Track wall snap during placement preview
@@ -1169,7 +1181,16 @@
     }
 
     // Furniture
+// Furniture
     if (showFurniture) {
+      // Security zones first, so they render underneath the modules (FR5)
+      for (const fi of floor.furniture) {
+        const inConflict = conflictIds.has(fi.id);
+        if (inConflict || isSelected(fi.id)) {
+          const cat = getCatalogItem(fi.catalogId);
+          drawSecurityZone(getCS(), fi, getSecurityZoneCm(cat?.category ?? 'Other'), inConflict);
+        }
+      }
       for (const fi of floor.furniture) {
         const selected = isSelected(fi.id);
         if (selected && draggingFurnitureId === fi.id) drawAlignmentGuides(fi);
@@ -3447,6 +3468,21 @@
 <svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
 
 <div class="w-full h-full relative overflow-hidden" role="application">
+    {#if conflictPairs.length > 0}
+    <div class="absolute top-3 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 bg-white/95 border border-red-300 shadow-lg rounded-lg px-4 py-2 text-sm pointer-events-none">
+      <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+      <span class="font-medium text-red-700">
+        {#if overlapCount > 0}{overlapCount} overlap{overlapCount > 1 ? 's' : ''}{/if}
+        {#if overlapCount > 0 && zoneCount > 0} · {/if}
+        {#if zoneCount > 0}{zoneCount} security-zone violation{zoneCount > 1 ? 's' : ''}{/if}
+      </span>
+      {#if worstZone}
+        <span class="text-gray-500">
+          ({(worstZone.actualCm! / 100).toFixed(1)} m of {(worstZone.requiredCm! / 100).toFixed(1)} m required)
+        </span>
+      {/if}
+    </div>
+  {/if}
   <canvas
     bind:this={canvas}
     class="block w-full h-full"

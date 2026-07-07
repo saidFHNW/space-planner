@@ -49,10 +49,10 @@ const ZONE_DEFAULT_CM = 200; // 2.0 m
 const SMALL_ZONE_CATEGORIES = new Set(['Rails', 'Curbs, Ledges & Tables']);
 
 /** Gap (cm) up to which two identical modules count as bound together. */
-export const BOND_TOLERANCE_CM = 5;
+export const BOND_TOLERANCE_CM = 18;
 
 /** Penetration depth (cm) up to which touching/snapped modules are not flagged as overlap. */
-const OVERLAP_TOLERANCE_CM = 2;
+const OVERLAP_TOLERANCE_CM = 18;
 
 export function getSecurityZoneCm(category: string): number {
   return SMALL_ZONE_CATEGORIES.has(category) ? ZONE_SMALL_CM : ZONE_DEFAULT_CM;

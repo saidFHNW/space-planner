@@ -13,6 +13,47 @@ import { drawFurnitureIcon } from '$lib/utils/furnitureIcons';
 import { getRoomPolygon, roomCentroid } from '$lib/utils/roomDetection';
 import { getWallTextureCanvas, getFloorTextureCanvas } from '$lib/utils/textureGenerator';
 
+// ── Security zone (FR5): translucent halo around a module's footprint ──
+export function drawSecurityZone(
+  cs: CanvasState,
+  item: FurnitureItem,
+  zoneCm: number,
+  conflict: boolean
+): void {
+  const { ctx, zoom } = cs;
+  const cat = getCatalogItem(item.catalogId);
+  if (!cat) return;
+
+  // Same axis-aligned footprint logic as collision.ts (90°-step rotations swap w/d)
+  const rot = ((Math.round(item.rotation) % 360) + 360) % 360;
+  const swapped = rot === 90 || rot === 270;
+  const baseW = (item.width ?? cat.width) * Math.abs(item.scale?.x ?? 1);
+  const baseD = (item.depth ?? cat.depth) * Math.abs(item.scale?.y ?? 1);
+  const w = (swapped ? baseD : baseW) * zoom;
+  const d = (swapped ? baseW : baseD) * zoom;
+  const z = zoneCm * zoom;
+
+  const s = wts(cs, item.position.x, item.position.y);
+  const x = s.x - w / 2 - z;
+  const y = s.y - d / 2 - z;
+  const rw = w + 2 * z;
+  const rh = d + 2 * z;
+  const r = Math.min(z, rw / 2, rh / 2); // rounded corners like the VT security-zone drawings
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.roundRect(x, y, rw, rh, r);
+  ctx.fillStyle = conflict ? 'rgba(239, 68, 68, 0.10)' : 'rgba(59, 130, 246, 0.07)';
+  ctx.strokeStyle = conflict ? 'rgba(220, 38, 38, 0.8)' : 'rgba(59, 130, 246, 0.5)';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([8, 6]);
+  ctx.fill();
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.restore();
+}
+
+
 // ── Wall geometry helpers ────────────────────────────────────────────
 
 export function wallLength(w: Wall): number {
@@ -807,8 +848,7 @@ export function drawWindowDistanceDimensions(cs: CanvasState, wall: Wall, window
 
 // ── Furniture drawing ────────────────────────────────────────────────
 
-export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected: boolean): void {
-  const { ctx, zoom } = cs;
+export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected: boolean, conflict = false): void {  const { ctx, zoom } = cs;
   const cat = getCatalogItem(item.catalogId);
   if (!cat) return;
   const s = wts(cs, item.position.x, item.position.y);
@@ -823,10 +863,17 @@ export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected
   ctx.rotate(angle);
   ctx.scale(Math.sign(sx) || 1, Math.sign(sy) || 1);
 
-  const itemColor = item.color ?? cat.color;
-  const strokeColor = selected ? '#3b82f6' : itemColor;
+  const itemColor = conflict ? '#ef4444' : (item.color ?? cat.color);
+  const strokeColor = conflict ? '#dc2626' : (selected ? '#3b82f6' : itemColor);
   ctx.lineWidth = selected ? 2 : 1;
   drawFurnitureIcon(ctx, item.catalogId, w, d, itemColor, strokeColor);
+  if (conflict) {
+    ctx.strokeStyle = '#dc2626';
+    ctx.lineWidth = 2.5;
+    ctx.setLineDash([6, 4]);
+    ctx.strokeRect(-w / 2 - 4, -d / 2 - 4, w + 8, d + 8);
+    ctx.setLineDash([]);
+  }
 
   const fontSize = Math.max(8, Math.min(12, Math.min(w, d) * 0.2));
   if (Math.min(w, d) > 20) {

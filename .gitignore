@@ -26,4 +26,8 @@ vite.config.ts.timestamp-*
 static/models/K*.glb
 static/original-models/
 
+#ignoring images from git
+static/thumbnails/
+static/topdown/
+
 

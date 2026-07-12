@@ -6,7 +6,7 @@
   import { roomTemplates, placeRoomTemplate } from '$lib/utils/roomTemplates';
   import { furnitureCatalog, furnitureCategories } from '$lib/utils/furnitureCatalog';
   import type { FurnitureDef } from '$lib/utils/furnitureCatalog';
-  import { getModelFile, generateThumbnail, getThumbnail, preloadThumbnails } from '$lib/utils/furnitureThumbnails';
+  // // (old thumbnail helpers no longer used — previews come from /thumbnails/*.png) import { getModelFile, generateThumbnail, getThumbnail, preloadThumbnails } from '$lib/utils/furnitureThumbnails';
   import { onMount } from 'svelte';
   import { importRoomPlan, extractRoomJsonFromZip, ORTHO_VERSION } from '$lib/utils/roomplanImport';
   import { currentProject, loadProject, importFloorIntoCurrentProject, createDefaultProject } from '$lib/stores/project';
@@ -18,13 +18,8 @@
   let selectedCategory = $state<string>('All');
   let thumbsReady = $state(0); // increment to trigger reactivity
 
-  onMount(() => {
-    // Preload thumbnails, re-render as each completes
-    const files = new Set(furnitureCatalog.map(f => getModelFile(f.id)).filter(Boolean) as string[]);
-    for (const file of files) {
-      generateThumbnail(file).then(() => { thumbsReady++; });
-    }
-  });
+  // Catalogue previews are now pre-generated PNGs served from /thumbnails/<SKU>.png
+  // (see the /thumbgen dev tool). No runtime thumbnail generation needed.
 
   // RoomPlan import dialog state
   let showImportDialog = $state(false);
@@ -44,6 +39,9 @@
 
   let currentPlacing = $state<string | null>(null);
   placingFurnitureId.subscribe((id) => { currentPlacing = id; });
+
+  let missingThumbs = $state<Set<string>>(new Set());
+  function thumbError(id: string) { missingThumbs = new Set(missingThumbs).add(id); }
 
   function onPresetClick(presetId: string, templateName?: string) {
     const preset = roomPresets.find(p => p.id === presetId);
@@ -256,6 +254,7 @@
   let hoverTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
   let hoverPos = $state<{ x: number; y: number }>({ x: 0, y: 0 });
   let showPreview = $state(false);
+
 
   function onItemMouseEnter(e: MouseEvent, item: FurnitureDef) {
     if (hoverTimeout) clearTimeout(hoverTimeout);
@@ -613,8 +612,8 @@
                     onkeydown={(e: KeyboardEvent) => { if (e.key === 'Enter') { e.stopPropagation(); toggleFavorite(item.id); } }}
                     title={favoriteIds.includes(item.id) ? 'Remove from favorites' : 'Add to favorites'}
                   >{favoriteIds.includes(item.id) ? '♥' : '♡'}</span>
-                  {#if thumbsReady >= 0 && getModelFile(item.id) && getThumbnail(getModelFile(item.id)!)}
-                    <img src={getThumbnail(getModelFile(item.id)!)} alt={item.name} class="w-10 h-10 object-contain" />
+                  {#if !missingThumbs.has(item.id)}
+                    <img src={`/thumbnails/${item.id}.png`} alt={item.name} loading="lazy" class="w-10 h-10 object-contain" onerror={() => thumbError(item.id)} />
                   {:else}
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: {item.color}20">
                       <div class="w-4 h-4 rounded-sm" style="background-color: {item.color}; opacity: 0.7"></div>
@@ -650,8 +649,8 @@
                 onkeydown={(e: KeyboardEvent) => { if (e.key === 'Enter') { e.stopPropagation(); toggleFavorite(item.id); } }}
                 title={favoriteIds.includes(item.id) ? 'Remove from favorites' : 'Add to favorites'}
               >{favoriteIds.includes(item.id) ? '♥' : '♡'}</span>
-              {#if thumbsReady >= 0 && getModelFile(item.id) && getThumbnail(getModelFile(item.id)!)}
-                <img src={getThumbnail(getModelFile(item.id)!)} alt={item.name} class="w-12 h-12 object-contain" />
+              {#if !missingThumbs.has(item.id)}
+                <img src={`/thumbnails/${item.id}.png`} alt={item.name} loading="lazy" class="w-12 h-12 object-contain" onerror={() => thumbError(item.id)} />
               {:else}
                 <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: {item.color}20">
                   <div class="w-5 h-5 rounded-sm" style="background-color: {item.color}; opacity: 0.7"></div>
@@ -681,8 +680,8 @@
   >
     <div class="bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden" style="width: 220px;">
       <div class="w-full h-[120px] bg-gray-50 flex items-center justify-center p-3">
-        {#if thumbsReady >= 0 && getModelFile(item.id) && getThumbnail(getModelFile(item.id)!)}
-          <img src={getThumbnail(getModelFile(item.id)!)} alt={item.name} class="max-w-full max-h-full object-contain" style="image-rendering: auto;" />
+        {#if !missingThumbs.has(item.id)}
+          <img src={`/thumbnails/${item.id}.png`} alt={item.name} loading="lazy" class="max-w-full max-h-full object-contain" style="image-rendering: auto;" onerror={() => thumbError(item.id)} />
         {:else}
           <div class="w-16 h-16 rounded-xl flex items-center justify-center" style="background-color: {item.color}20">
             <div class="w-10 h-10 rounded-md" style="background-color: {item.color}; opacity: 0.7"></div>

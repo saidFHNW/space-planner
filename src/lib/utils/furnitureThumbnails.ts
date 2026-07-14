@@ -234,7 +234,10 @@ const MODEL_FILES: Record<string, string> = {
 };
 
 export function getModelFile(catalogId: string): string | null {
-  return MODEL_FILES[catalogId] ?? null;
+  // VT convention: catalogue id === SKU === "<SKU>.glb" on disk.
+  // Legacy Kenney ids still resolve via MODEL_FILES; every VT SKU
+  // isn't a key there, so it falls through to itself.
+  return MODEL_FILES[catalogId] ?? catalogId;
 }
 
 /** Preload all thumbnails */

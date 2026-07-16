@@ -6,7 +6,10 @@
   import { roomTemplates, placeRoomTemplate } from '$lib/utils/roomTemplates';
   import { furnitureCatalog, furnitureCategories } from '$lib/utils/furnitureCatalog';
   import type { FurnitureDef } from '$lib/utils/furnitureCatalog';
-  import { getModelFile, generateThumbnail, getThumbnail, preloadThumbnails } from '$lib/utils/furnitureThumbnails';
+  import { getModelFile, getThumbnail } from '$lib/utils/furnitureThumbnails';
+  import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
+
+
   import { onMount } from 'svelte';
   import { importRoomPlan, extractRoomJsonFromZip, ORTHO_VERSION } from '$lib/utils/roomplanImport';
   import { currentProject, loadProject, importFloorIntoCurrentProject, createDefaultProject } from '$lib/stores/project';
@@ -18,13 +21,6 @@
   let selectedCategory = $state<string>('All');
   let thumbsReady = $state(0); // increment to trigger reactivity
 
-  onMount(() => {
-    // Preload thumbnails, re-render as each completes
-    const files = new Set(furnitureCatalog.map(f => getModelFile(f.id)).filter(Boolean) as string[]);
-    for (const file of files) {
-      generateThumbnail(file).then(() => { thumbsReady++; });
-    }
-  });
 
   // RoomPlan import dialog state
   let showImportDialog = $state(false);
@@ -613,7 +609,7 @@
                     onkeydown={(e: KeyboardEvent) => { if (e.key === 'Enter') { e.stopPropagation(); toggleFavorite(item.id); } }}
                     title={favoriteIds.includes(item.id) ? 'Remove from favorites' : 'Add to favorites'}
                   >{favoriteIds.includes(item.id) ? '♥' : '♡'}</span>
-                  {#if thumbsReady >= 0 && getModelFile(item.id) && getThumbnail(getModelFile(item.id)!)}
+                  {#if $thumbnailProgress.done >= 0 && getModelFile(item.id) && getThumbnail(getModelFile(item.id)!)}
                     <img src={getThumbnail(getModelFile(item.id)!)} alt={item.name} class="w-10 h-10 object-contain" />
                   {:else}
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: {item.color}20">

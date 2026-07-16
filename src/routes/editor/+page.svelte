@@ -6,6 +6,10 @@
   import BuildPanel from '$lib/components/sidebar/BuildPanel.svelte';
   import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';
   import LayersPanel from '$lib/components/sidebar/LayersPanel.svelte';
+  import { preloadCatalogThumbnails } from '$lib/utils/furnitureThumbnails';
+  import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
+
+  onMount(() => { preloadCatalogThumbnails(); });
 
   let showLayers = $state(false);
   import FloorPlanCanvas from '$lib/components/editor/FloorPlanCanvas.svelte';
@@ -318,5 +322,21 @@
 {:else}
   <div class="h-screen flex items-center justify-center">
     <p class="text-gray-400">Loading...</p>
+  </div>
+{/if}
+
+{#if !$thumbnailProgress.finished}
+  <div class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center gap-4">
+    <div class="text-sm font-medium text-gray-700">
+      Loading catalogue… {$thumbnailProgress.done} / {$thumbnailProgress.total}
+    </div>
+    <div class="w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div
+        class="h-full bg-blue-500 transition-all duration-200"
+        style="width:{$thumbnailProgress.total
+          ? ($thumbnailProgress.done / $thumbnailProgress.total) * 100
+          : 0}%"
+      ></div>
+    </div>
   </div>
 {/if}

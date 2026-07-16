@@ -5,7 +5,10 @@
  */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { furnitureCatalog } from './furnitureCatalog';
+import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
 
+const CACHE_NAME = 'module-previews-v1'; // bump to invalidate stored previews
 const SIZE = 128;
 const cache = new Map<string, string>();
 const pending = new Map<string, Promise<string | null>>();
@@ -49,6 +52,46 @@ function loadModel(file: string): Promise<THREE.Group> {
   });
 }
 
+// ---- persistent cache (survives reloads; the loading screen only
+// ever appears on the first cold visit) ----
+async function fromPersistentCache(file: string): Promise<string | null> {
+  if (typeof caches === 'undefined') return null;
+  try {
+    const c = await caches.open(CACHE_NAME);
+    const hit = await c.match(`/__thumb__/${encodeURIComponent(file)}`);
+    return hit ? await hit.text() : null;
+  } catch { return null; }
+}
+
+async function toPersistentCache(file: string, dataUrl: string): Promise<void> {
+  if (typeof caches === 'undefined') return;
+  try {
+    const c = await caches.open(CACHE_NAME);
+    await c.put(
+      `/__thumb__/${encodeURIComponent(file)}`,
+      new Response(dataUrl, { headers: { 'Content-Type': 'text/plain' } })
+    );
+  } catch { /* quota/unavailable: fall back to memory-only */ }
+}
+
+// ---- free geometry/materials/textures after each render (85 models
+// would otherwise accumulate GPU memory on one shared renderer) ----
+function disposeModel(root: THREE.Object3D): void {
+  root.traverse((obj) => {
+    const mesh = obj as THREE.Mesh;
+    if (mesh.geometry) mesh.geometry.dispose();
+    const mats = Array.isArray(mesh.material)
+      ? mesh.material
+      : mesh.material ? [mesh.material] : [];
+    for (const m of mats) {
+      for (const v of Object.values(m)) {
+        if (v instanceof THREE.Texture) v.dispose();
+      }
+      m.dispose();
+    }
+  });
+}
+
 export function getThumbnail(file: string): string | null {
   return cache.get(file) ?? null;
 }
@@ -59,6 +102,13 @@ export async function generateThumbnail(file: string): Promise<string | null> {
 
   const promise = (async () => {
     try {
+        // Reload? Serve from the persistent cache instead of re-rendering.
+      const persisted = await fromPersistentCache(file);
+      if (persisted) {
+        cache.set(file, persisted);
+        pending.delete(file);
+        return persisted;
+      }
       ensureRenderer();
       const model = await loadModel(file);
 
@@ -102,7 +152,9 @@ export async function generateThumbnail(file: string): Promise<string | null> {
       const dataUrl = renderer!.domElement.toDataURL('image/png');
 
       scene!.remove(model);
+      disposeModel(model);
       cache.set(file, dataUrl);
+      await toPersistentCache(file, dataUrl);
       pending.delete(file);
       return dataUrl;
     } catch {
@@ -246,4 +298,38 @@ export function preloadThumbnails(): void {
   for (const file of files) {
     generateThumbnail(file);
   }
+}
+
+/**
+ * Render previews for the whole VT catalogue through a small queue,
+ * reporting progress to thumbnailProgress. Idempotent per page load.
+ * Cached previews (memory or persistent) resolve near-instantly, so
+ * warm visits finish the "loading" in a blink.
+ */
+let preloadStarted = false;
+
+export async function preloadCatalogThumbnails(): Promise<void> {
+  if (preloadStarted) return;
+  preloadStarted = true;
+
+  const files = [...new Set(
+    furnitureCatalog.map(f => getModelFile(f.id)).filter(Boolean) as string[]
+  )];
+
+  let done = 0;
+  thumbnailProgress.set({ done: 0, total: files.length, finished: files.length === 0 });
+
+  const CONCURRENCY = 3; // parallel GLB load+render; keeps the tab responsive
+  let next = 0;
+  async function worker(): Promise<void> {
+    while (next < files.length) {
+      const file = files[next++];
+      await generateThumbnail(file); // null on failure is fine — still counts
+      done++;
+      thumbnailProgress.update(p => ({ ...p, done }));
+    }
+  }
+
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  thumbnailProgress.update(p => ({ ...p, finished: true }));
 }

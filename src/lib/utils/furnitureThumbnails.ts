@@ -312,6 +312,7 @@ let preloadStarted = false;
 export async function preloadCatalogThumbnails(): Promise<void> {
   if (preloadStarted) return;
   preloadStarted = true;
+  const t0 = performance.now();
 
   const files = [...new Set(
     furnitureCatalog.map(f => getModelFile(f.id)).filter(Boolean) as string[]
@@ -331,6 +332,7 @@ export async function preloadCatalogThumbnails(): Promise<void> {
     }
   }
 
+  console.log(`[preview-benchmark] catalogue ready in ${((performance.now() - t0) / 1000).toFixed(2)} s (${files.length} models)`);
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
   thumbnailProgress.update(p => ({ ...p, finished: true }));
 }

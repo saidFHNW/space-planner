@@ -26,4 +26,7 @@ vite.config.ts.timestamp-*
 static/models/K*.glb
 static/original-models/
 
+#ignore the products_summary.ipynb (not project relevant)
+src/lib/data/products_summary.ipynb
+
 

@@ -14,3 +14,7 @@ export const thumbnailProgress = writable<ThumbnailProgress>({
   total: 0,
   finished: false,
 });
+
+/** Bumped each time a top-down canvas image finishes rendering,
+ *  so the 2D canvas knows to redraw. */
+export const topdownVersion = writable(0);

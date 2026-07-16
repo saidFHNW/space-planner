@@ -12,6 +12,7 @@ import { getCatalogItem } from '$lib/utils/furnitureCatalog';
 import { drawFurnitureIcon } from '$lib/utils/furnitureIcons';
 import { getRoomPolygon, roomCentroid } from '$lib/utils/roomDetection';
 import { getWallTextureCanvas, getFloorTextureCanvas } from '$lib/utils/textureGenerator';
+import { getTopdownImage, getModelFile } from './furnitureThumbnails';
 
 // ── Security zone (FR5): translucent halo around a module's footprint ──
 export function drawSecurityZone(
@@ -866,7 +867,23 @@ export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected
   const itemColor = conflict ? '#ef4444' : (item.color ?? cat.color);
   const strokeColor = conflict ? '#dc2626' : (selected ? '#3b82f6' : itemColor);
   ctx.lineWidth = selected ? 2 : 1;
-  drawFurnitureIcon(ctx, item.catalogId, w, d, itemColor, strokeColor);
+  const tdFile = getModelFile(item.catalogId);
+  const td = tdFile ? getTopdownImage(tdFile) : null;
+  if (td) {
+    ctx.drawImage(td, -w / 2, -d / 2, w, d);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(td, -w / 2, -d / 2, w, d);
+    // keep state readable on top of the photo-like image:
+    if (conflict) {
+      ctx.fillStyle = 'rgba(239, 68, 68, 0.30)';   // red tint on conflict
+      ctx.fillRect(-w / 2, -d / 2, w, d);
+    }
+    ctx.strokeStyle = strokeColor;
+    ctx.strokeRect(-w / 2, -d / 2, w, d);
+  } else {
+    drawFurnitureIcon(ctx, item.catalogId, w, d, itemColor, strokeColor);
+  }
   if (conflict) {
     ctx.strokeStyle = '#dc2626';
     ctx.lineWidth = 2.5;

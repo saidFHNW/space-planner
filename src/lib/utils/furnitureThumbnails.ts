@@ -6,10 +6,11 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { furnitureCatalog } from './furnitureCatalog';
-import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
+import { thumbnailProgress, topdownVersion } from '$lib/stores/thumbnailProgress';
 
-const CACHE_NAME = 'module-previews-v1'; // bump to invalidate stored previews
+const CACHE_NAME = 'module-previews-v2'; // bump to invalidate stored previews
 const SIZE = 128;
+const TOPDOWN_MAX = 768; // px on the longer footprint side; raise to 1024 if still soft
 const cache = new Map<string, string>();
 const pending = new Map<string, Promise<string | null>>();
 
@@ -332,4 +333,105 @@ export async function preloadCatalogThumbnails(): Promise<void> {
 
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
   thumbnailProgress.update(p => ({ ...p, finished: true }));
+}
+
+// ───────────────────────────────────────────────────────────────────
+// Top-down images for the 2D canvas (placed modules).
+// Generated lazily: the first time a SKU is drawn on the canvas, the
+// render is kicked off in the background; the canvas keeps drawing
+// the vector icon until the image is ready, then swaps.
+// ───────────────────────────────────────────────────────────────────
+
+const topdownImages = new Map<string, HTMLImageElement>();
+const topdownPending = new Set<string>();
+
+/**
+ * SYNCHRONOUS lookup for the canvas draw loop — never awaits.
+ * Returns the image if ready; otherwise triggers background
+ * generation (once) and returns null (caller draws the icon).
+ */
+export function getTopdownImage(file: string): HTMLImageElement | null {
+  const img = topdownImages.get(file);
+  if (img) return img;
+  if (!topdownPending.has(file)) {
+    topdownPending.add(file);
+    void generateTopdown(file);
+  }
+  return null;
+}
+
+async function generateTopdown(file: string): Promise<void> {
+  try {
+    // Persistent cache first (survives reloads, like the catalogue previews)
+    let dataUrl = await fromPersistentCache(`topdown:${file}`);
+    if (!dataUrl) {
+      dataUrl = await renderTopdown(file);
+      if (!dataUrl) return; // unloadable/empty model → icon stays
+      await toPersistentCache(`topdown:${file}`, dataUrl);
+    }
+    const img = new Image();
+    img.onload = () => {
+      topdownImages.set(file, img);
+      topdownVersion.update((n) => n + 1); // tell the canvas to redraw
+    };
+    img.src = dataUrl;
+  } catch {
+    /* icon fallback remains */
+  }
+}
+
+async function renderTopdown(file: string): Promise<string | null> {
+  ensureRenderer();
+  const model = await loadModel(file);
+
+  // Clear previous models, keep lights (same pattern as generateThumbnail)
+  const toRemove: THREE.Object3D[] = [];
+  scene!.children.forEach((c) => { if (!(c instanceof THREE.Light)) toRemove.push(c); });
+  toRemove.forEach((c) => scene!.remove(c));
+
+  scene!.add(model);
+
+  const box = new THREE.Box3().setFromObject(model);
+  const size = new THREE.Vector3();
+  const center = new THREE.Vector3();
+  box.getSize(size);
+  box.getCenter(center);
+
+  if (size.x === 0 || size.z === 0) {
+    scene!.remove(model);
+    disposeModel(model);
+    return null;
+  }
+
+  // Frame the EXACT footprint (no padding): the square render gets
+  // distorted here and un-distorted by drawImage into the w×d rect,
+  // so the image aligns 1:1 with the collision box.
+  camera!.left = -size.x / 2;
+  camera!.right = size.x / 2;
+  camera!.top = size.z / 2;
+  camera!.bottom = -size.z / 2;
+  camera!.near = 0.01;
+  camera!.far = Math.max(size.y, 1) * 10;
+
+  // Straight down. up = -Z maps the model's depth axis to image-vertical.
+  camera!.position.set(center.x, center.y + Math.max(size.y, 1) * 2, center.z);
+  camera!.up.set(0, 0, -1);
+  camera!.lookAt(center);
+  camera!.updateProjectionMatrix();
+
+  // Render at high, aspect-correct resolution (the shared renderer is
+  // 128² for sidebar tiles — far too small for modules that span
+  // hundreds of pixels on the canvas). Long side = TOPDOWN_MAX.
+  const aspect = size.x / size.z;
+  const tw = aspect >= 1 ? TOPDOWN_MAX : Math.round(TOPDOWN_MAX * aspect);
+  const th = aspect >= 1 ? Math.round(TOPDOWN_MAX / aspect) : TOPDOWN_MAX;
+  renderer!.setSize(Math.max(tw, 32), Math.max(th, 32));
+
+  renderer!.render(scene!, camera!);
+  const dataUrl = renderer!.domElement.toDataURL('image/png');
+  renderer!.setSize(SIZE, SIZE); // restore for catalogue thumbnail renders
+
+  scene!.remove(model);
+  disposeModel(model);
+  return dataUrl;
 }

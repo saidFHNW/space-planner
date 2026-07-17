@@ -2151,6 +2151,13 @@
 </script>
 
 <div bind:this={container} class="w-full h-full relative">
+  <!-- Camera controls hint (discoverability: pan via right-drag is otherwise invisible) -->
+  <div class="absolute bottom-3 right-3 z-10 pointer-events-none select-none
+              rounded-lg bg-black/55 text-white text-[11px] leading-relaxed
+              px-3 py-2 backdrop-blur-sm">
+    <span class="font-medium">🖱 Camera:</span>
+    Left-drag orbit &nbsp;·&nbsp; Right-drag move &nbsp;·&nbsp; Scroll zoom
+  </div>
   <!-- 3D Toolbar Row -->
   <div class="absolute top-4 right-4 z-50 flex gap-1.5">
     <!-- Multi-Floor Stacking Toggle -->

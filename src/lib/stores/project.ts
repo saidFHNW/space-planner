@@ -1,6 +1,28 @@
 import { writable, derived, get } from 'svelte/store';
 import type { Project, Floor, Wall, Door, Window as Win, FurnitureItem, Point, Stair, Column, BackgroundImage, GuideLine, ElementGroup } from '$lib/models/types';
 
+export function setFloorArea(widthCm: number, depthCm: number) {
+  const p = get(currentProject);
+  if (!p) return;
+  snapshot('Set area');
+  const floor = p.floors.find((f) => f.id === p.activeFloorId);
+  if (!floor) return;
+  const clamp = (v: number) => Math.min(Math.max(Math.round(v), 100), 50000); // 1 m … 500 m
+  floor.area = { widthCm: clamp(widthCm), depthCm: clamp(depthCm) };
+  p.updatedAt = new Date();
+  currentProject.set({ ...p });
+}
+
+export function clearFloorArea() {
+  const p = get(currentProject);
+  if (!p) return;
+  snapshot('Removed area');
+  const floor = p.floors.find((f) => f.id === p.activeFloorId);
+  if (!floor) return;
+  delete floor.area;
+  p.updatedAt = new Date();
+  currentProject.set({ ...p });
+}
 
 function uid(): string {
   return Math.random().toString(36).slice(2, 10);

@@ -143,6 +143,8 @@ export interface Floor {
   id: string;
   name: string;
   level: number;
+  /** Skatepark plot boundary, centred on the origin, in cm. Optional: older saves have none. */
+  area?: { widthCm: number; depthCm: number };
   walls: Wall[];
   rooms: Room[];
   doors: Door[];

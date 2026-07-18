@@ -8,15 +8,14 @@
   import type { FurnitureDef } from '$lib/utils/furnitureCatalog';
   import { getModelFile, getThumbnail } from '$lib/utils/furnitureThumbnails';
   import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
-
-
+  import { setFloorArea, clearFloorArea } from '$lib/stores/project';
   import { onMount } from 'svelte';
   import { importRoomPlan, extractRoomJsonFromZip, ORTHO_VERSION } from '$lib/utils/roomplanImport';
   import { currentProject, loadProject, importFloorIntoCurrentProject, createDefaultProject } from '$lib/stores/project';
   import type { Project } from '$lib/models/types';
 
   // AreaSummaryPanel moved to top bar dialog
-  let activeTab = $state<'draw' | 'rooms' | 'objects'>('draw');
+  let activeTab = $state<'draw' | 'area' | 'objects'>('draw');
   let constructionOpen = $state(true);
   let selectedCategory = $state<string>('All');
   let thumbsReady = $state(0); // increment to trigger reactivity
@@ -29,6 +28,48 @@
   let optStraighten = $state(true);
   let optOrthogonal = $state(true);
   let optMergeDistance = $state(15);
+
+  // ---- Area definition (plot boundary) ----
+  let areaWidthM = $state('');
+  let areaDepthM = $state('');
+  let areaError = $state('');
+
+// Prefill inputs from the saved area when a project loads
+$effect(() => {
+  const a = $activeFloor?.area;
+  if (a) {
+    areaWidthM = (a.widthCm / 100).toString();
+    areaDepthM = (a.depthCm / 100).toString();
+  }
+});
+
+/** Parse "5.1" or "5,1" (Swiss keyboards) to metres. */
+function parseMetres(s: string): number | null {
+  const v = parseFloat(s.trim().replace(',', '.'));
+  return Number.isFinite(v) && v > 0 ? v : null;
+}
+
+function applyArea() {
+  const w = parseMetres(areaWidthM);
+  const d = parseMetres(areaDepthM);
+  if (w === null || d === null) {
+    areaError = 'Please enter valid numbers, e.g. 40 or 25.5';
+    return;
+  }
+  if (w > 500 || d > 500) {
+    areaError = 'Maximum size is 500 × 500 m';
+    return;
+  }
+  areaError = '';
+  setFloorArea(w * 100, d * 100); // m -> cm
+}
+
+function removeArea() {
+  areaError = '';
+  areaWidthM = '';
+  areaDepthM = '';
+  clearFloorArea();
+}
 
   function setTool(tool: Tool) {
     selectedTool.set(tool);
@@ -308,9 +349,9 @@
       onclick={() => activeTab = 'draw'}
     >Build</button>
     <button
-      class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'rooms' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
-      onclick={() => activeTab = 'rooms'}
-    >Rooms</button>
+      class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'area' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
+      onclick={() => activeTab = 'area'}
+    >Area</button>
     <button
       class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'objects' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
       onclick={() => activeTab = 'objects'}
@@ -496,51 +537,48 @@
         {/if}
       </div>
 
-    {:else if activeTab === 'rooms'}
-      <div class="space-y-2">
-        <h3 class="text-xs font-semibold text-gray-400 uppercase mb-2">Room Presets</h3>
-        <p class="text-xs text-gray-400 mb-3">Click to add a room shape to the canvas</p>
-        <div class="grid grid-cols-2 gap-2">
-          {#each roomPresets as preset}
-            <button
-              class="flex flex-col items-center gap-1.5 p-3 rounded-lg border-2 border-gray-100 hover:border-blue-300 hover:bg-blue-50 transition-colors cursor-grab active:cursor-grabbing"
-              onclick={() => onPresetClick(preset.id)}
-              draggable="true"
-              ondragstart={(e) => { e.dataTransfer?.setData('application/o3d-type', 'room'); e.dataTransfer?.setData('application/o3d-id', preset.id); }}
-            >
-              <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-2xl font-mono">{preset.icon}</div>
-              <span class="text-xs font-medium text-gray-600">{preset.name}</span>
-            </button>
-          {/each}
+    {:else if activeTab === 'area'}
+      <div class="p-3">
+        <h3 class="text-xs font-semibold text-gray-400 uppercase mb-1">Plot area</h3>
+        <p class="text-xs text-gray-400 mb-3">
+          Define your available ground area. Modules outside the boundary will be flagged.
+        </p>
+        <div class="flex items-end gap-2 mb-2">
+          <label class="flex-1 text-xs text-gray-600">
+            Width (m)
+            <input type="text" inputmode="decimal" bind:value={areaWidthM}
+              placeholder="e.g. 40"
+              class="mt-1 w-full rounded border border-gray-200 px-2 py-1.5 text-sm" />
+          </label>
+          <span class="pb-2 text-gray-400">×</span>
+          <label class="flex-1 text-xs text-gray-600">
+            Depth (m)
+            <input type="text" inputmode="decimal" bind:value={areaDepthM}
+              placeholder="e.g. 25.5"
+              class="mt-1 w-full rounded border border-gray-200 px-2 py-1.5 text-sm" />
+          </label>
         </div>
-
-        <hr class="my-3 border-gray-200" />
-
-        <h3 class="text-xs font-semibold text-gray-400 uppercase mb-2">Room Templates</h3>
-        <p class="text-xs text-gray-400 mb-3">Pre-furnished rooms — walls + furniture in one click</p>
-        <div class="grid grid-cols-2 gap-2">
-          {#each roomTemplates as tmpl}
-            <button
-              class="flex flex-col items-center gap-1.5 p-3 rounded-lg border-2 border-gray-100 hover:border-green-300 hover:bg-green-50 transition-colors cursor-grab active:cursor-grabbing"
-              onclick={() => onPresetClick(tmpl.presetId, tmpl.name)}
-              draggable="true"
-              ondragstart={(e) => { e.dataTransfer?.setData('application/o3d-type', 'room-template'); e.dataTransfer?.setData('application/o3d-id', tmpl.name); }}
-            >
-              <div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center text-lg">
-                {#if tmpl.name === 'Living Room'}🛋️
-                {:else if tmpl.name === 'Bedroom'}🛏️
-                {:else if tmpl.name === 'Kitchen'}🍳
-                {:else if tmpl.name === 'Bathroom'}🛁
-                {:else if tmpl.name === 'Office'}🖥️
-                {:else if tmpl.name === 'Dining Room'}🍽️
-                {:else}🏠
-                {/if}
-              </div>
-              <span class="text-xs font-medium text-gray-600">{tmpl.name}</span>
-              <span class="text-[10px] text-gray-400">{tmpl.furniture.length} items</span>
+        {#if areaError}
+          <p class="text-xs text-red-500 mb-2">{areaError}</p>
+        {/if}
+        <div class="flex gap-2">
+          <button onclick={applyArea}
+            class="flex-1 rounded-lg bg-blue-500 text-white text-xs font-semibold py-2 hover:bg-blue-600">
+            Apply
+          </button>
+          {#if $activeFloor?.area}
+            <button onclick={removeArea}
+              class="rounded-lg border border-gray-200 text-gray-500 text-xs px-3 py-2 hover:border-gray-300">
+              Remove
             </button>
-          {/each}
+          {/if}
         </div>
+        {#if $activeFloor?.area}
+          <p class="mt-3 text-xs text-gray-500">
+            Current: {($activeFloor.area.widthCm / 100).toLocaleString()} ×
+            {($activeFloor.area.depthCm / 100).toLocaleString()} m
+          </p>
+        {/if}
       </div>
 
     {:else if activeTab === 'objects'}

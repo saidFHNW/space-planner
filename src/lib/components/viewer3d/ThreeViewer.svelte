@@ -18,6 +18,8 @@
   import { getMaterial } from '$lib/utils/materials';
   import { getWallTextureCanvas, getFloorTextureCanvas, setTextureLoadCallback } from '$lib/utils/textureGenerator';
 
+  let plotMesh: THREE.Mesh | null = null;
+  let plotOutline: THREE.LineSegments | null = null;
   let container: HTMLDivElement;
   let renderer: THREE.WebGLRenderer;
   let scene: THREE.Scene;
@@ -617,6 +619,58 @@
     return tex;
   }
 
+  /**
+   * Plot surface: visual 3D counterpart of the 2D area boundary.
+   * Sized from floor.area (origin-centred). No area -> no plot surface
+   * (matches 2D, where no boundary is drawn without an area).
+   */
+  function updatePlotSurface(floor: Floor | null) {
+    // Remove + dispose the previous mesh/outline
+    if (plotMesh) {
+      scene.remove(plotMesh);
+      plotMesh.geometry.dispose();
+      (plotMesh.material as THREE.Material).dispose();
+      plotMesh = null;
+    }
+    if (plotOutline) {
+      scene.remove(plotOutline);
+      plotOutline.geometry.dispose();
+      (plotOutline.material as THREE.Material).dispose();
+      plotOutline = null;
+    }
+    const area = floor?.area;
+    if (!area) { markSceneDirty(); return; }
+
+    // Surface: reuse the existing texture generator, tinted lighter than
+    // the world ground so the plot reads as its own surface.
+    const tex = createFloorTexture();
+    const geo = new THREE.PlaneGeometry(area.widthCm, area.depthCm);
+    const mat = new THREE.MeshStandardMaterial({
+      map: tex,
+      color: 0xdedad2,          // light tint over the texture
+      side: THREE.DoubleSide,
+      roughness: 0.85,
+      polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1,
+    });
+    plotMesh = new THREE.Mesh(geo, mat);
+    plotMesh.rotation.x = -Math.PI / 2;
+    plotMesh.position.y = 0.5;
+    plotMesh.receiveShadow = true;
+    scene.add(plotMesh);
+
+    // Dark boundary outline — 3D twin of the 2D dashed rectangle.
+    const edges = new THREE.EdgesGeometry(geo);
+    plotOutline = new THREE.LineSegments(
+      edges,
+      new THREE.LineBasicMaterial({ color: 0x334155 })
+    );
+    plotOutline.rotation.x = -Math.PI / 2;
+    plotOutline.position.y = 1.5; // slightly above the surface, no z-fighting
+    scene.add(plotOutline);
+
+    markSceneDirty();
+  }
+
   function init() {
     scene = new THREE.Scene();
 
@@ -892,14 +946,8 @@
     scene.add(rimLight);
 
     // Textured floor
-    const floorTex = createFloorTexture();
-    const floorGeo = new THREE.PlaneGeometry(4000, 4000);
-    const floorMat = new THREE.MeshStandardMaterial({ map: floorTex, side: THREE.DoubleSide, roughness: 0.8, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
-    const floorMesh = new THREE.Mesh(floorGeo, floorMat);
-    floorMesh.rotation.x = -Math.PI / 2;
-    floorMesh.position.y = 0.5;
-    floorMesh.receiveShadow = true;
-    scene.add(floorMesh);
+    // Plot surface (sized from the defined area; nothing without an area)
+    updatePlotSurface(get(activeFloor));
 
     wallGroup = new THREE.Group();
     scene.add(wallGroup);
@@ -1814,13 +1862,15 @@
   }
   
   function rebuildScene() {
-    if (showAllFloors) {
-      buildAllFloorsStacked();
-    } else if (currentFloor) {
-      buildWalls(currentFloor);
-    }
-    markSceneDirty();
+  updatePlotSurface(currentFloor); // keep plot surface in sync with floor.area
+  if (showAllFloors) {
+    buildAllFloorsStacked();
+  } else if (currentFloor) {
+    buildWalls(currentFloor);
   }
+  markSceneDirty();
+  }
+
 
   interface WallSegment {
     width: number;

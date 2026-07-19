@@ -1598,3 +1598,26 @@ export function drawMinimap(
 
   mctx.strokeStyle = '#cbd5e1'; mctx.lineWidth = 1; mctx.strokeRect(0, 0, mw, mh);
 }
+
+/** Draw the plot boundary (centred on origin) as a dashed dark rectangle. */
+export function drawAreaBoundary(cs: CanvasState, area: { widthCm: number; depthCm: number }): void {
+  const { ctx, zoom } = cs;
+  const tl = wts(cs, -area.widthCm / 2, -area.depthCm / 2);
+  const w = area.widthCm * zoom;
+  const d = area.depthCm * zoom;
+  ctx.save();
+  ctx.strokeStyle = '#334155';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([10, 6]);
+  ctx.strokeRect(tl.x, tl.y, w, d);
+  ctx.setLineDash([]);
+  // label at the top-left corner
+  ctx.fillStyle = '#334155';
+  ctx.font = '11px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText(
+    `${(area.widthCm / 100).toLocaleString()} × ${(area.depthCm / 100).toLocaleString()} m`,
+    tl.x + 4, tl.y - 6
+  );
+  ctx.restore();
+}

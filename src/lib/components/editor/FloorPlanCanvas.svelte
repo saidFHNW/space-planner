@@ -20,9 +20,10 @@
   import { topdownVersion } from '$lib/stores/thumbnailProgress';
   import { getSecurityZoneCm} from "$lib/utils/collision";
 
-let conflictIds = $state<Set<string>>(new Set());
+  let conflictIds = $state<Set<string>>(new Set());
   let conflictPairs = $state<import('$lib/utils/collision').ConflictPair[]>([]);
   collisionState.subscribe((r) => { conflictIds = r.conflictIds; conflictPairs = r.pairs; });
+  let boundaryCount = $derived(conflictPairs.filter(p => p.type === 'boundary').length);
   let overlapCount = $derived(conflictPairs.filter(p => p.type === 'overlap').length);
   let zoneCount = $derived(conflictPairs.filter(p => p.type === 'zone').length);
   let worstZone = $derived(
@@ -3476,8 +3477,10 @@ let conflictIds = $state<Set<string>>(new Set());
       <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
       <span class="font-medium text-red-700">
         {#if overlapCount > 0}{overlapCount} overlap{overlapCount > 1 ? 's' : ''}{/if}
-        {#if overlapCount > 0 && zoneCount > 0} · {/if}
+        {#if overlapCount > 0 && (zoneCount > 0 || boundaryCount > 0)} · {/if}
         {#if zoneCount > 0}{zoneCount} security-zone violation{zoneCount > 1 ? 's' : ''}{/if}
+        {#if zoneCount > 0 && boundaryCount > 0} · {/if}
+        {#if boundaryCount > 0}{boundaryCount} outside area{/if}
       </span>
       {#if worstZone}
         <span class="text-gray-500">

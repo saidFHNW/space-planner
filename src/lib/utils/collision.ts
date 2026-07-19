@@ -26,11 +26,11 @@ export interface CollisionItemInput {
   rotation: number;    // degrees
 }
 
-export type ConflictType = 'overlap' | 'zone';
+export type ConflictType = 'overlap' | 'zone' | 'boundary';
 
 export interface ConflictPair {
   aId: string;
-  bId: string;
+  bId?: string;
   type: ConflictType;
   /** For 'zone': the required clearance in cm and the actual distance in cm. */
   requiredCm?: number;
@@ -94,9 +94,24 @@ function rectRelation(a: Rect, b: Rect): { distance: number; penetration: number
  * Checks all placed modules pairwise.
  * O(n²) — fine for the prototype scale (NFR2 targets ~20 modules; 100+ still cheap).
  */
-export function checkCollisions(items: CollisionItemInput[]): CollisionResult {
-  const pairs: ConflictPair[] = [];
-  const conflictIds = new Set<string>();
+  export function checkCollisions(
+    items: CollisionItemInput[],
+    area?: { widthCm: number; depthCm: number }
+  ): CollisionResult {
+    const pairs: ConflictPair[] = [];
+    const conflictIds = new Set<string>();
+
+  // 0) Plot boundary: every module must lie fully inside the (origin-centred) area.
+  if (area) {
+    const bx = area.widthCm / 2, by = area.depthCm / 2;
+    for (const it of items) {
+      const r = footprint(it);
+      if (r.minX < -bx || r.maxX > bx || r.minY < -by || r.maxY > by) {
+        pairs.push({ aId: it.id, type: 'boundary' });
+        conflictIds.add(it.id);
+      }
+    }
+  }
 
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {

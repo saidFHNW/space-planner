@@ -16,7 +16,7 @@ import {
 const EMPTY: CollisionResult = { pairs: [], conflictIds: new Set() };
 
 export const collisionState = derived(activeFloor, ($floor): CollisionResult => {
-  if (!$floor || $floor.furniture.length < 2) return EMPTY;
+  if (!$floor || $floor.furniture.length < 1) return EMPTY;
 
   const items: CollisionItemInput[] = $floor.furniture.map((f) => {
     const cat = getCatalogItem(f.catalogId);
@@ -32,5 +32,8 @@ export const collisionState = derived(activeFloor, ($floor): CollisionResult => 
     };
   });
 
-  return checkCollisions(items);
+
+  return checkCollisions(items, $floor.area);
 });
+
+

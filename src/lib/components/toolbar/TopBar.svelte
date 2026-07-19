@@ -1,17 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { currentProject, viewMode, undo, redo, addFloor, removeFloor, setActiveFloor, updateProjectName, loadProject, createDefaultProject, snapEnabled, canvasZoom, panMode, showFurnitureStore, layerVisibility, importFloorIntoCurrentProject } from '$lib/stores/project';
-  import { localStore } from '$lib/services/datastore';
   import { get } from 'svelte/store';
   import type { Floor, Project } from '$lib/models/types';
-  import { exportAsPNG, exportAsJSON, exportAsSVG, exportPDF } from '$lib/utils/export';
-  import { exportDXF, exportDWG } from '$lib/utils/cadExport';
+  import { exportAsJSON, } from '$lib/utils/export';
   import { importRoomPlan } from '$lib/utils/roomplanImport';
   import SettingsDialog from './SettingsDialog.svelte';
   import AreaSummaryPanel from '$lib/components/sidebar/AreaSummaryPanel.svelte';
   import { saveState, lastSavedAt, manualSave, initAutoSave } from '$lib/stores/saveStatus';
   import { initVersionHistory, snapshotOnAction } from '$lib/stores/versionHistory';
   import VersionHistoryPanel from './VersionHistoryPanel.svelte';
+  import { exportItemListCSV } from '$lib/utils/itemListExport';
 
   let settingsOpen = $state(false);
   let areaOpen = $state(false);
@@ -76,65 +75,18 @@
     else lastSavedText = `Last saved: ${Math.floor(diff / 3600)}h ago`;
   }
 
-  function onExport2DPNG() {
-    const p = get(currentProject);
-    const canvas = document.querySelector('canvas') as HTMLCanvasElement;
-    if (canvas) exportAsPNG(canvas, p ?? undefined);
-    exportOpen = false;
-  }
-
-  function onExport3DPNG() {
-    const p = get(currentProject);
-    const name = p?.name || 'floorplan';
-    // Switch to 3D, wait a tick, then screenshot
-    const oldMode = mode;
-    viewMode.set('3d');
-    setTimeout(() => {
-      const c = document.querySelector('.w-full.h-full canvas, div canvas') as HTMLCanvasElement;
-      if (c) {
-        c.toBlob((blob) => {
-          if (blob) {
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url; a.download = `${name}-3d.png`; a.click();
-            URL.revokeObjectURL(url);
-          }
-        });
-      }
-      if (oldMode === '2d') viewMode.set('2d');
-    }, 500);
-    exportOpen = false;
-  }
-
   function onExportJSON() {
     const p = get(currentProject);
     if (p) exportAsJSON(p);
     exportOpen = false;
   }
 
-  function onExportSVG() {
-    const p = get(currentProject);
-    if (p) exportAsSVG(p);
-    exportOpen = false;
+  function onExportItemList() {
+  const p = get(currentProject);   // same pattern the other handlers use — check
+  if (p) exportItemListCSV(p);     // whether they call it `p` via get() or a store sub
+  exportOpen = false;
   }
 
-  function onExportDXF() {
-    const p = get(currentProject);
-    if (p) exportDXF(p);
-    exportOpen = false;
-  }
-
-  function onExportDWG() {
-    const p = get(currentProject);
-    if (p) exportDWG(p);
-    exportOpen = false;
-  }
-
-  function onExportPDF() {
-    const p = get(currentProject);
-    if (p) exportPDF(p);
-    exportOpen = false;
-  }
 
   function onShareProject() {
     const p = get(currentProject);
@@ -414,30 +366,8 @@
     </button>
     {#if exportOpen}
       <div class="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 py-1 w-48 z-50">
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={() => { exportOpen = false; window.dispatchEvent(new KeyboardEvent('keydown', { key: 'p', ctrlKey: true })); }}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          Print Layout
-        </button>
-        <div class="h-px bg-gray-100 my-1"></div>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExport2DPNG}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          Export 2D as PNG
-        </button>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExport3DPNG}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          Export 3D as PNG
-        </button>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExportSVG}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
-          Export as SVG
-        </button>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExportDXF}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 16h2"/><path d="M14 16h2"/></svg>
-          Export as DXF
-        </button>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExportDWG}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 16h6"/></svg>
-          Export as DWG
+        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExportItemList}>
+          📋 Item list (CSV)
         </button>
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onExportPDF}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 11v6"/><path d="M8 11v6"/><path d="M12 11v6"/></svg>

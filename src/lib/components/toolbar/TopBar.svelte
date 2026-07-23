@@ -11,6 +11,7 @@
   import { initVersionHistory, snapshotOnAction } from '$lib/stores/versionHistory';
   import VersionHistoryPanel from './VersionHistoryPanel.svelte';
   import { exportItemListCSV } from '$lib/utils/itemListExport';
+  import { exportSkateparkPDF } from '$lib/utils/skateparkPdf';
 
   let settingsOpen = $state(false);
   let areaOpen = $state(false);
@@ -38,6 +39,12 @@
   function setMode(m: '2d' | '3d') {
     viewMode.set(m);
   }
+
+function onExportPDF() {
+  const p = get(currentProject);
+  if (p) void exportSkateparkPDF(p);
+  exportOpen = false;
+}
 
   function onNameBlur() {
     editingName = false;

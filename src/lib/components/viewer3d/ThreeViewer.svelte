@@ -17,6 +17,7 @@
   import { detectRooms, getRoomPolygon, roomCentroid } from '$lib/utils/roomDetection';
   import { getMaterial } from '$lib/utils/materials';
   import { getWallTextureCanvas, getFloorTextureCanvas, setTextureLoadCallback } from '$lib/utils/textureGenerator';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   let plotMesh: THREE.Mesh | null = null;
   let plotOutline: THREE.LineSegments | null = null;
@@ -2210,6 +2211,7 @@
   </div>
   <!-- 3D Toolbar Row -->
   <div class="absolute top-4 right-4 z-50 flex gap-1.5">
+    {#if SHOW_HOUSE_FEATURES}
     <!-- Multi-Floor Stacking Toggle -->
     <button
       onclick={() => { showAllFloors = !showAllFloors; rebuildScene(); }}
@@ -2223,6 +2225,7 @@
         <rect x="4" y="2" width="16" height="4" rx="1" opacity="0.3"/>
       </svg>
     </button>
+    {/if}
 
     <!-- Top-Down View Button -->
     <button
@@ -2240,6 +2243,7 @@
       </svg>
     </button>
 
+    {#if SHOW_HOUSE_FEATURES}
     <!-- Wall Transparency Toggle -->
     <button
       onclick={toggleWallTransparency}
@@ -2253,7 +2257,9 @@
         <line x1="12" y1="3" x2="12" y2="21"/>
       </svg>
     </button>
+    {/if}
 
+    {#if SHOW_HOUSE_FEATURES}
     <!-- Edit Mode Toggle -->
     <button
       onclick={() => { editMode = !editMode; if (editMode && walkthroughMode) { exitWalkthroughMode(); } if (!editMode) { selectedElementId.set(null); materialPickerWall = null; materialPickerPos = null; } }}
@@ -2266,7 +2272,9 @@
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
     </button>
+    {/if}
 
+    {#if SHOW_HOUSE_FEATURES}
     <!-- Interior Camera Button -->
     <button
       onclick={() => {
@@ -2289,6 +2297,7 @@
         <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
       </svg>
     </button>
+    {/if}
 
     <!-- 3D Screenshot Button -->
     <button

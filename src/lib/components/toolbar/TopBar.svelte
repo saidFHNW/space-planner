@@ -12,6 +12,7 @@
   import VersionHistoryPanel from './VersionHistoryPanel.svelte';
   import { exportItemListCSV } from '$lib/utils/itemListExport';
   import { exportSkateparkPDF } from '$lib/utils/skateparkPdf';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   let settingsOpen = $state(false);
   let areaOpen = $state(false);
@@ -215,6 +216,7 @@ function onExportPDF() {
     >{projectName}</button>
   {/if}
 
+  {#if SHOW_HOUSE_FEATURES}
   <div class="h-5 w-px bg-white/20"></div>
 
   <!-- Floor selector as buttons -->
@@ -235,6 +237,7 @@ function onExportPDF() {
     >+</button>
     <span class="text-white/40 text-[10px] ml-1">{floors.length}F</span>
   </div>
+  {/if}
 
   <div class="flex-1"></div>
 

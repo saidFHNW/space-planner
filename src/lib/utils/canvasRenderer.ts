@@ -14,6 +14,7 @@ import { getRoomPolygon, roomCentroid } from '$lib/utils/roomDetection';
 import { getWallTextureCanvas, getFloorTextureCanvas } from '$lib/utils/textureGenerator';
 import { getTopdownImage, getModelFile } from './furnitureThumbnails';
 
+
 // ── Security zone (FR5): translucent halo around a module's footprint ──
 export function drawSecurityZone(
   cs: CanvasState,
@@ -25,25 +26,25 @@ export function drawSecurityZone(
   const cat = getCatalogItem(item.catalogId);
   if (!cat) return;
 
-  // Same axis-aligned footprint logic as collision.ts (90°-step rotations swap w/d)
-  const rot = ((Math.round(item.rotation) % 360) + 360) % 360;
-  const swapped = rot === 90 || rot === 270;
-  const baseW = (item.width ?? cat.width) * Math.abs(item.scale?.x ?? 1);
-  const baseD = (item.depth ?? cat.depth) * Math.abs(item.scale?.y ?? 1);
-  const w = (swapped ? baseD : baseW) * zoom;
-  const d = (swapped ? baseW : baseD) * zoom;
+  // Oriented footprint: draw in the module's local frame and rotate the canvas,
+  // so the zone follows the module at ANY angle. Uses the same rotation
+  // convention as drawFurnitureItem and the same OBB semantics as collision.ts:
+  // the rounded rectangle is exactly the set of points within zoneCm of the
+  // rotated footprint, matching the outline-distance check in the math.
+  const w = (item.width ?? cat.width) * Math.abs(item.scale?.x ?? 1) * zoom;
+  const d = (item.depth ?? cat.depth) * Math.abs(item.scale?.y ?? 1) * zoom;
   const z = zoneCm * zoom;
 
   const s = wts(cs, item.position.x, item.position.y);
-  const x = s.x - w / 2 - z;
-  const y = s.y - d / 2 - z;
   const rw = w + 2 * z;
   const rh = d + 2 * z;
   const r = Math.min(z, rw / 2, rh / 2); // rounded corners like the VT security-zone drawings
 
   ctx.save();
+  ctx.translate(s.x, s.y);
+  ctx.rotate(((item.rotation ?? 0) * Math.PI) / 180);
   ctx.beginPath();
-  ctx.roundRect(x, y, rw, rh, r);
+  ctx.roundRect(-rw / 2, -rh / 2, rw, rh, r);
   ctx.fillStyle = conflict ? 'rgba(239, 68, 68, 0.10)' : 'rgba(59, 130, 246, 0.07)';
   ctx.strokeStyle = conflict ? 'rgba(220, 38, 38, 0.8)' : 'rgba(59, 130, 246, 0.5)';
   ctx.lineWidth = 1.5;

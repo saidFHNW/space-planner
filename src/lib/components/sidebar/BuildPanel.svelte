@@ -13,9 +13,10 @@
   import { importRoomPlan, extractRoomJsonFromZip, ORTHO_VERSION } from '$lib/utils/roomplanImport';
   import { currentProject, loadProject, importFloorIntoCurrentProject, createDefaultProject } from '$lib/stores/project';
   import type { Project } from '$lib/models/types';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   // AreaSummaryPanel moved to top bar dialog
-  let activeTab = $state<'draw' | 'area' | 'objects'>('draw');
+  let activeTab = $state< 'area' | 'objects'>('objects');
   let constructionOpen = $state(true);
   let selectedCategory = $state<string>('All');
   let thumbsReady = $state(0); // increment to trigger reactivity
@@ -344,10 +345,12 @@ function removeArea() {
 <div class="w-64 bg-white border-r border-gray-200 flex flex-col h-full overflow-hidden">
   <!-- Tabs -->
   <div class="flex border-b border-gray-200">
+    {#if SHOW_HOUSE_FEATURES}
     <button
       class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'draw' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
       onclick={() => activeTab = 'draw'}
     >Build</button>
+    {/if}
     <button
       class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'area' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
       onclick={() => activeTab = 'area'}

@@ -14,6 +14,7 @@
   let renameValue = $state('');
   let contextMenuId = $state<string | null>(null);
   let showTemplateModal = $state(false);
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   onMount(async () => {
     projects = await localStore.list();
@@ -115,6 +116,7 @@
         <p class="text-sm text-white/50 mt-0.5">{projects.length} project{projects.length !== 1 ? 's' : ''}</p>
       </div>
       <div class="flex items-center gap-3">
+        {#if SHOW_HOUSE_FEATURES}
         <button
           onclick={() => showTemplateModal = true}
           class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
@@ -122,6 +124,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
           Templates
         </button>
+        {/if}
         <button
           onclick={newProject}
           class="px-5 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold text-sm shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 flex items-center gap-2"
@@ -145,9 +148,11 @@
           <button onclick={newProject} class="px-5 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold text-sm">
             Create Project
           </button>
+            {#if SHOW_HOUSE_FEATURES}
           <button onclick={() => showTemplateModal = true} class="px-5 py-2.5 bg-white text-gray-700 rounded-lg hover:bg-gray-100 font-semibold text-sm border border-gray-200">
             Start from Template
           </button>
+            {/if}
         </div>
       </div>
     {:else}
@@ -234,7 +239,8 @@
   </div>
 
   <!-- Template Modal -->
-  {#if showTemplateModal}
+    {#if SHOW_HOUSE_FEATURES}
+    {#if showTemplateModal}
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onclick={() => showTemplateModal = false}>
       <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-xl w-full mx-4" onclick={(e) => e.stopPropagation()}>
         <div class="flex items-center justify-between mb-2">
@@ -260,4 +266,6 @@
       </div>
     </div>
   {/if}
+        {/if}
 </div>
+

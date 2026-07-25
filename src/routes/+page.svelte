@@ -5,6 +5,7 @@
   import { createDefaultProject, currentProject } from '$lib/stores/project';
   import WelcomeScreen from '$lib/components/WelcomeScreen.svelte';
   import { houseTemplates } from '$lib/utils/houseTemplates';
+  import { skateparkTemplates } from '$lib/utils/skateparkTemplates';
 
   let projects = $state<{ id: string; name: string; updatedAt: string }[]>([]);
   let thumbnails = $state<Record<string, string | null>>({});
@@ -14,6 +15,7 @@
   let renameValue = $state('');
   let contextMenuId = $state<string | null>(null);
   let showTemplateModal = $state(false);
+  let showStarterModal = $state(false);
   import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   onMount(async () => {
@@ -38,6 +40,14 @@
     currentProject.set(p);
     await localStore.save(p);
     showTemplateModal = false;
+    goto(`/editor?id=${p.id}`);
+  }
+
+  async function createFromStarter(index: number) {
+    const p = skateparkTemplates[index].create();
+    currentProject.set(p);
+    await localStore.save(p);
+    showStarterModal = false;
     goto(`/editor?id=${p.id}`);
   }
 
@@ -125,6 +135,12 @@
           Templates
         </button>
         {/if}
+          <button
+          onclick={() => showStarterModal = true}
+          class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
+        >
+          🛹 Example Layouts
+        </button>
         <button
           onclick={newProject}
           class="px-5 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold text-sm shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 flex items-center gap-2"
@@ -153,6 +169,9 @@
             Start from Template
           </button>
             {/if}
+            <button onclick={() => showStarterModal = true} class="px-5 py-2.5 bg-white text-gray-700 rounded-lg hover:bg-gray-100 font-semibold text-sm border border-gray-200">
+            Start from Example
+          </button>
         </div>
       </div>
     {:else}
@@ -267,5 +286,32 @@
     </div>
   {/if}
         {/if}
+    <!-- Skatepark Starter Modal -->
+    {#if showStarterModal}
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onclick={() => showStarterModal = false}>
+      <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-xl w-full mx-4" onclick={(e) => e.stopPropagation()}>
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-2xl font-bold text-gray-800">Example Layouts</h2>
+          <button onclick={() => showStarterModal = false} class="text-gray-400 hover:text-gray-600 text-xl">✕</button>
+        </div>
+        <p class="text-sm text-gray-400 mb-6">Ready-made skatepark layouts you can open and adapt</p>
+        <div class="space-y-3">
+          {#each skateparkTemplates as t, i}
+            <button
+              onclick={() => createFromStarter(i)}
+              class="w-full flex items-center gap-4 p-4 rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all text-left"
+            >
+              <span class="text-3xl">{t.icon}</span>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-gray-800">{t.name}</div>
+                <div class="text-xs text-gray-400">{t.description}</div>
+              </div>
+              <span class="text-xs font-medium text-blue-500 bg-blue-50 px-2 py-1 rounded-lg shrink-0">{t.area}</span>
+            </button>
+          {/each}
+        </div>
+      </div>
+    </div>
+    {/if}
 </div>
 

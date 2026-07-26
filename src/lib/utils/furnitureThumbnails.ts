@@ -8,7 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { furnitureCatalog } from './furnitureCatalog';
 import { thumbnailProgress, topdownVersion } from '$lib/stores/thumbnailProgress';
 
-const CACHE_NAME = 'module-previews-v2'; // bump to invalidate stored previews
+const CACHE_NAME = 'module-previews-v3'; // v3: purge previews poisoned by the concurrent-render race
 const SIZE = 128;
 const TOPDOWN_MAX = 768; // px on the longer footprint side; raise to 1024 if still soft
 const cache = new Map<string, string>();
@@ -18,12 +18,37 @@ let renderer: THREE.WebGLRenderer | null = null;
 let scene: THREE.Scene | null = null;
 let camera: THREE.OrthographicCamera | null = null;
 
+// The renderer/scene/camera are shared singletons, but model LOADING runs in
+// parallel (3 workers) and top-down renders arrive at any time. Everything that
+// touches the shared scene/camera/canvas must therefore run one at a time —
+// otherwise renders capture each other's camera setup, sizes and up-vectors
+// (the "tilted thumbnail" bug), and the bad images get poisoned into the
+// persistent cache. This tiny mutex serialises only the render section; the
+// slow part (GLB download/parse) stays parallel.
+let renderChain: Promise<unknown> = Promise.resolve();
+function withRenderLock<T>(fn: () => T): Promise<T> {
+  const run = renderChain.then(fn);
+  renderChain = run.catch(() => undefined);
+  return run;
+}
+
 function ensureRenderer() {
   if (renderer) return;
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, preserveDrawingBuffer: true });
   renderer.setSize(SIZE, SIZE);
   renderer.setPixelRatio(1);
   renderer.setClearColor(0x000000, 0);
+
+  // If the browser drops the WebGL context (GPU pressure next to the editor's
+  // own 3D view), the shared renderer silently dies and every later render
+  // fails -> permanent icon fallbacks. Recreate lazily on the next render.
+  renderer.domElement.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    renderer?.dispose();
+    renderer = null;
+    scene = null;
+    camera = null;
+  });
 
   scene = new THREE.Scene();
 
@@ -110,54 +135,63 @@ export async function generateThumbnail(file: string): Promise<string | null> {
         pending.delete(file);
         return persisted;
       }
-      ensureRenderer();
-      const model = await loadModel(file);
+      const model = await loadModel(file); // slow part: stays parallel
 
-      // Clear scene of previous models (keep lights)
-      const toRemove: THREE.Object3D[] = [];
-      scene!.children.forEach(c => { if (!(c instanceof THREE.Light)) toRemove.push(c); });
-      toRemove.forEach(c => scene!.remove(c));
+      const dataUrl = withRenderLock(() => {
+        ensureRenderer();
 
-      scene!.add(model);
+        // Clear scene of previous models (keep lights)
+        const toRemove: THREE.Object3D[] = [];
+        scene!.children.forEach(c => { if (!(c instanceof THREE.Light)) toRemove.push(c); });
+        toRemove.forEach(c => scene!.remove(c));
 
-      // Fit camera to model
-      const box = new THREE.Box3().setFromObject(model);
-      const size = new THREE.Vector3();
-      const center = new THREE.Vector3();
-      box.getSize(size);
-      box.getCenter(center);
+        scene!.add(model);
 
-      const maxDim = Math.max(size.x, size.y, size.z);
-      if (maxDim === 0) return null;
+        // Fit camera to model
+        const box = new THREE.Box3().setFromObject(model);
+        const size = new THREE.Vector3();
+        const center = new THREE.Vector3();
+        box.getSize(size);
+        box.getCenter(center);
 
-      const pad = 1.3;
-      const half = (maxDim * pad) / 2;
-      camera!.left = -half;
-      camera!.right = half;
-      camera!.top = half;
-      camera!.bottom = -half;
-      camera!.near = 0.01;
-      camera!.far = maxDim * 10;
+        const maxDim = Math.max(size.x, size.y, size.z);
+        if (maxDim === 0) return null;
 
-      // Isometric-ish angle
-      const dist = maxDim * 2;
-      camera!.position.set(
-        center.x + dist * 0.7,
-        center.y + dist * 0.8,
-        center.z + dist * 0.7
-      );
-      camera!.lookAt(center);
-      camera!.updateProjectionMatrix();
+        const pad = 1.3;
+        const half = (maxDim * pad) / 2;
+        camera!.left = -half;
+        camera!.right = half;
+        camera!.top = half;
+        camera!.bottom = -half;
+        camera!.near = 0.01;
+        camera!.far = maxDim * 10;
 
-      renderer!.render(scene!, camera!);
-      const dataUrl = renderer!.domElement.toDataURL('image/png');
+        // Isometric-ish angle. up must be set explicitly: the top-down
+        // renderer uses up=(0,0,-1) on the SAME camera.
+        camera!.up.set(0, 1, 0);
+        const dist = maxDim * 2;
+        camera!.position.set(
+          center.x + dist * 0.7,
+          center.y + dist * 0.8,
+          center.z + dist * 0.7
+        );
+        camera!.lookAt(center);
+        camera!.updateProjectionMatrix();
 
-      scene!.remove(model);
-      disposeModel(model);
-      cache.set(file, dataUrl);
-      await toPersistentCache(file, dataUrl);
+        renderer!.setSize(SIZE, SIZE); // a top-down render may have resized the canvas
+        renderer!.render(scene!, camera!);
+        const url = renderer!.domElement.toDataURL('image/png');
+
+        scene!.remove(model);
+        disposeModel(model);
+        return url;
+      });
+      const resolved = await dataUrl;
+      if (!resolved) return null;
+      cache.set(file, resolved);
+      await toPersistentCache(file, resolved);
       pending.delete(file);
-      return dataUrl;
+      return resolved;
     } catch {
       pending.delete(file);
       return null;
@@ -332,8 +366,8 @@ export async function preloadCatalogThumbnails(): Promise<void> {
     }
   }
 
-  console.log(`[preview-benchmark] catalogue ready in ${((performance.now() - t0) / 1000).toFixed(2)} s (${files.length} models)`);
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  console.log(`[preview-benchmark] catalogue ready in ${((performance.now() - t0) / 1000).toFixed(2)} s (${files.length} models)`);
   thumbnailProgress.update(p => ({ ...p, finished: true }));
 }
 
@@ -383,8 +417,10 @@ async function generateTopdown(file: string): Promise<void> {
 }
 
 async function renderTopdown(file: string): Promise<string | null> {
+  const model = await loadModel(file); // slow part: stays parallel
+
+  return withRenderLock(() => {
   ensureRenderer();
-  const model = await loadModel(file);
 
   // Clear previous models, keep lights (same pattern as generateThumbnail)
   const toRemove: THREE.Object3D[] = [];
@@ -432,8 +468,10 @@ async function renderTopdown(file: string): Promise<string | null> {
   renderer!.render(scene!, camera!);
   const dataUrl = renderer!.domElement.toDataURL('image/png');
   renderer!.setSize(SIZE, SIZE); // restore for catalogue thumbnail renders
+  camera!.up.set(0, 1, 0);       // restore default up (thumbnails set it too, belt & braces)
 
   scene!.remove(model);
   disposeModel(model);
   return dataUrl;
+  });
 }

@@ -29,7 +29,7 @@
     }
     thumbnails = thumbs;
     const seen = localStorage.getItem('hasSeenWelcome');
-    if (!seen && projects.length === 0) {
+    if (SHOW_HOUSE_FEATURES && !seen && projects.length === 0) {
       showWelcome = true;
     }
   });

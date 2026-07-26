@@ -1,0 +1,12 @@
+node_modules
+.svelte-kit
+.git
+.venv
+.vercel
+.env.local
+.idea
+build
+dist
+static/thumbnails
+static/topdown
+static/original-models

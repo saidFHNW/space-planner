@@ -34,3 +34,4 @@ src/lib/data/products_summary.ipynb
 # Pre-generated preview PNGs (only used by the feature/model-preview method; regenerable via /thumbgen)
 static/thumbnails/
 static/topdown/
+.env*

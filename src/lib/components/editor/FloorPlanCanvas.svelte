@@ -19,6 +19,7 @@
   import { collisionState } from '$lib/stores/collision';
   import { topdownVersion } from '$lib/stores/thumbnailProgress';
   import { getSecurityZoneCm} from "$lib/utils/collision";
+  import {SHOW_HOUSE_FEATURES} from "$lib/config/features";
 
   let conflictIds = $state<Set<string>>(new Set());
   let conflictPairs = $state<import('$lib/utils/collision').ConflictPair[]>([]);
@@ -3628,6 +3629,7 @@
     <button class="hover:text-gray-700" onclick={() => showGrid = !showGrid} title="Toggle Grid (G)">
       {showGrid ? '▦' : '▢'} Grid
     </button>
+      {#if SHOW_HOUSE_FEATURES}
     <button class="hover:text-gray-700" onclick={() => projectSettings.update(s => ({ ...s, snapToGrid: !s.snapToGrid }))} title="Toggle Snap to Grid (S)">
       {currentSnapToGrid ? '🧲' : '↔'} Snap
     </button>
@@ -3643,6 +3645,7 @@
     <button class="hover:text-gray-700" onclick={() => showMinimap = !showMinimap} title="Toggle Mini-map">
       {showMinimap ? '🗺' : '🗺'} Map
     </button>
+          {/if}
   </div>
   <!-- Layer Visibility Panel -->
   {#if showLayerPanel}

@@ -250,6 +250,7 @@ function onExportPDF() {
 
   <div class="h-5 w-px bg-white/20"></div>
 
+  {#if SHOW_HOUSE_FEATURES}
   <!-- Snap to grid toggle -->
   <button
     onclick={() => { snapEnabled.update(v => !v); snapOn = !snapOn; }}
@@ -261,6 +262,7 @@ function onExportPDF() {
       <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
     </svg>
   </button>
+  {/if}
 
   <!-- Select / Pan toggle -->
   {#if mode === '2d'}
@@ -342,7 +344,7 @@ function onExportPDF() {
   >
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
   </button>
-
+   {#if SHOW_HOUSE_FEATURES}
   <!-- Area summary button -->
   <button
     onclick={() => areaOpen = true}
@@ -352,6 +354,7 @@ function onExportPDF() {
   >
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
   </button>
+  {/if}
 
   <!-- Settings button -->
   <button

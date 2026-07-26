@@ -4,6 +4,7 @@
   import { currentProject, updateProjectName } from '$lib/stores/project';
   import type { Project } from '$lib/models/types';
   import { themePreference, type ThemePreference } from '$lib/stores/theme';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   let { open = $bindable(false) }: { open: boolean } = $props();
   let projectName = $state('');
@@ -129,6 +130,7 @@
           Project
           {#if activeTab === 'project'}<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-700 dark:bg-slate-300 rounded-t"></div>{/if}
         </button>
+        {#if SHOW_HOUSE_FEATURES}
         <button
           class="px-4 py-2 text-sm font-medium transition-colors relative {activeTab === 'dimensions' ? 'text-slate-800 dark:text-slate-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
           onclick={() => activeTab = 'dimensions'}
@@ -136,6 +138,7 @@
           Dimensions
           {#if activeTab === 'dimensions'}<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-700 dark:bg-slate-300 rounded-t"></div>{/if}
         </button>
+        {/if}
         <button
           class="px-4 py-2 text-sm font-medium transition-colors relative {activeTab === 'appearance' ? 'text-slate-800 dark:text-slate-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
           onclick={() => activeTab = 'appearance'}
@@ -143,6 +146,7 @@
           Appearance
           {#if activeTab === 'appearance'}<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-700 dark:bg-slate-300 rounded-t"></div>{/if}
         </button>
+          {#if SHOW_HOUSE_FEATURES}
         <button
           class="px-4 py-2 text-sm font-medium transition-colors relative {activeTab === 'ai' ? 'text-slate-800 dark:text-slate-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
           onclick={() => activeTab = 'ai'}
@@ -150,6 +154,7 @@
           AI
           {#if activeTab === 'ai'}<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-700 dark:bg-slate-300 rounded-t"></div>{/if}
         </button>
+        {/if}
       </div>
 
       <!-- Content -->

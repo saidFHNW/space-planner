@@ -3584,9 +3584,9 @@
   {#if currentFloor && currentFloor.walls.length === 0 && currentFloor.furniture.length === 0 && currentFloor.doors.length === 0}
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <div class="text-center opacity-60">
-        <div class="text-5xl mb-3">🏠</div>
-        <div class="text-sm font-medium text-gray-500">Start building your floor plan</div>
-        <div class="text-xs text-gray-400 mt-1">Draw walls with <span class="font-mono bg-gray-100 px-1 rounded">W</span> or drag items from the sidebar</div>
+        <div class="text-5xl mb-3">🛹</div>
+        <div class="text-sm font-medium text-gray-500">Start building your skatepark</div>
+        <div class="text-xs text-gray-400 mt-1">Drag modules from the sidebar onto your area</div>
       </div>
     </div>
   {/if}
@@ -3633,8 +3633,8 @@
     <button class="hover:text-gray-700" onclick={() => projectSettings.update(s => ({ ...s, snapToGrid: !s.snapToGrid }))} title="Toggle Snap to Grid (S)">
       {currentSnapToGrid ? '🧲' : '↔'} Snap
     </button>
-    <button class="hover:text-gray-700" onclick={() => layerVisibility.update(v => ({ ...v, furniture: !v.furniture }))} title="Toggle Furniture">
-      {showFurniture ? '🪑' : '👻'} Furniture
+    <button class="hover:text-gray-700" onclick={() => layerVisibility.update(v => ({ ...v, furniture: !v.furniture }))} title="Toggle Modules">
+      {showFurniture ? '🛹' : '👻'} Modules
     </button>
     <button class="hover:text-gray-700" onclick={() => showLayerPanel = !showLayerPanel} title="Layer Visibility">
       🗂 Layers

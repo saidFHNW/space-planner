@@ -1,5 +1,6 @@
 <script lang="ts">
   import { activeFloor, selectedElementId, layerVisibility } from '$lib/stores/project';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
   import { getCatalogItem } from '$lib/utils/furnitureCatalog';
   import type { Floor } from '$lib/models/types';
 
@@ -38,37 +39,39 @@
     if (!floor) return [];
     const cats: Category[] = [];
 
-    cats.push({
-      key: 'walls', label: 'Walls', icon: '🧱',
-      items: floor.walls.map((w, i) => ({ id: w.id, label: `Wall ${i + 1}`, icon: '─' })),
-    });
+    if (SHOW_HOUSE_FEATURES) {
+      cats.push({
+        key: 'walls', label: 'Walls', icon: '🧱',
+        items: floor.walls.map((w, i) => ({ id: w.id, label: `Wall ${i + 1}`, icon: '─' })),
+      });
+
+      cats.push({
+        key: 'doors', label: 'Doors', icon: '🚪',
+        items: floor.doors.map((d, i) => ({ id: d.id, label: `${d.type} door ${i + 1}`, icon: '🚪' })),
+      });
+
+      cats.push({
+        key: 'windows', label: 'Windows', icon: '🪟',
+        items: floor.windows.map((w, i) => ({ id: w.id, label: `${w.type} window ${i + 1}`, icon: '🪟' })),
+      });
+    }
 
     cats.push({
-      key: 'doors', label: 'Doors', icon: '🚪',
-      items: floor.doors.map((d, i) => ({ id: d.id, label: `${d.type} door ${i + 1}`, icon: '🚪' })),
-    });
-
-    cats.push({
-      key: 'windows', label: 'Windows', icon: '🪟',
-      items: floor.windows.map((w, i) => ({ id: w.id, label: `${w.type} window ${i + 1}`, icon: '🪟' })),
-    });
-
-    cats.push({
-      key: 'furniture', label: 'Furniture', icon: '🪑',
+      key: 'furniture', label: 'Modules', icon: '🛹',
       items: floor.furniture.map((fi) => {
         const cat = getCatalogItem(fi.catalogId);
         return { id: fi.id, label: cat?.name ?? fi.catalogId, icon: cat?.icon ?? '📦' };
       }),
     });
 
-    if (floor.stairs?.length) {
+    if (SHOW_HOUSE_FEATURES && floor.stairs?.length) {
       cats.push({
         key: 'stairs', label: 'Stairs', icon: '🪜',
         items: floor.stairs.map((s, i) => ({ id: s.id, label: `Stair ${i + 1} (${s.direction})`, icon: '🪜' })),
       });
     }
 
-    if (floor.columns?.length) {
+    if (SHOW_HOUSE_FEATURES && floor.columns?.length) {
       cats.push({
         key: 'columns', label: 'Columns', icon: '🏛️',
         items: floor.columns.map((c, i) => ({ id: c.id, label: `${c.shape} column ${i + 1}`, icon: '🏛️' })),

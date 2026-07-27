@@ -1,6 +1,7 @@
 <script lang="ts">
   import { activeFloor, selectedElementId, selectedRoomId, updateWall, updateDoor, updateWindow, updateRoom, updateFurniture, detectedRoomsStore, updateStair, updateColumn, updateBackgroundImage, setBackgroundImage, calibrationMode, calibrationPoints, updateTextAnnotation, toggleFurnitureLock } from '$lib/stores/project';
   import { floorMaterials, wallColors } from '$lib/utils/materials';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
   import { getCatalogItem } from '$lib/utils/furnitureCatalog';
   import { projectSettings, formatLength, formatArea } from '$lib/stores/settings';
   import type { Floor, Wall, Door, Window as Win, Room, FurnitureItem, Stair, Column, RoomCategory, TextAnnotation } from '$lib/models/types';
@@ -66,7 +67,7 @@
   let doorDistFromA = $derived(selectedDoor && selectedDoorWall ? Math.round(calcWallLength(selectedDoorWall) * selectedDoor.position) : 0);
   let doorDistFromB = $derived(selectedDoor && selectedDoorWall ? Math.round(calcWallLength(selectedDoorWall) * (1 - selectedDoor.position)) : 0);
 
-  // Calculate window distances  
+  // Calculate window distances
   let windowDistFromA = $derived(selectedWindow && selectedWindowWall ? Math.round(calcWallLength(selectedWindowWall) * selectedWindow.position) : 0);
   let windowDistFromB = $derived(selectedWindow && selectedWindowWall ? Math.round(calcWallLength(selectedWindowWall) * (1 - selectedWindow.position)) : 0);
 
@@ -188,7 +189,7 @@
     const newPosition = Math.max(0.05, Math.min(0.95, newDistFromA / wallLen));
     updateDoor(selectedDoor.id, { position: newPosition });
   }
-  
+
   function onDoorDistFromB(e: Event) {
     if (!selectedDoor || !selectedDoorWall) return;
     const newDistFromB = inputToCm(Number((e.target as HTMLInputElement).value));
@@ -205,7 +206,7 @@
     const newPosition = Math.max(0.05, Math.min(0.95, newDistFromA / wallLen));
     updateWindow(selectedWindow.id, { position: newPosition });
   }
-  
+
   function onWindowDistFromB(e: Event) {
     if (!selectedWindow || !selectedWindowWall) return;
     const newDistFromB = inputToCm(Number((e.target as HTMLInputElement).value));
@@ -531,7 +532,7 @@
       <span class="w-6 h-6 bg-purple-100 rounded flex items-center justify-center text-xs">
         {getCatalogItem(selectedFurniture.catalogId)?.icon ?? '🪑'}
       </span>
-      {getCatalogItem(selectedFurniture.catalogId)?.name ?? 'Furniture'} Properties
+      {getCatalogItem(selectedFurniture.catalogId)?.name ?? 'Module'} Properties
       <button
         onclick={() => { if (selectedFurniture) toggleFurnitureLock(selectedFurniture.id); }}
         class="ml-auto px-1.5 py-0.5 rounded text-xs border transition-colors {selectedFurniture.locked ? 'bg-amber-100 border-amber-400 text-amber-700' : 'border-gray-200 hover:bg-gray-50 text-gray-500'}"
@@ -539,6 +540,7 @@
       >{selectedFurniture.locked ? '🔒 Locked' : '🔓'}</button>
     </h3>
     <div class="space-y-3">
+      {#if SHOW_HOUSE_FEATURES}
       <!-- Color -->
       <div>
         <div class="flex items-center gap-1 mb-2">
@@ -561,50 +563,67 @@
         </div>
         <div class="flex items-center gap-2">
           <span class="text-xs text-gray-500">Custom:</span>
-          <input 
-            type="color" 
-            value={selectedFurniture.color ?? getCatalogItem(selectedFurniture.catalogId)?.color ?? '#888888'} 
-            oninput={(e) => onFurnitureColor((e.target as HTMLInputElement).value)} 
-            class="w-8 h-6 rounded border border-gray-200 cursor-pointer" 
+          <input
+            type="color"
+            value={selectedFurniture.color ?? getCatalogItem(selectedFurniture.catalogId)?.color ?? '#888888'}
+            oninput={(e) => onFurnitureColor((e.target as HTMLInputElement).value)}
+            class="w-8 h-6 rounded border border-gray-200 cursor-pointer"
           />
         </div>
       </div>
-      
-      <!-- Dimensions -->
+
+      {/if}
+
+      {#if SHOW_HOUSE_FEATURES}
+      <!-- Dimensions (editable only in the house domain; VT modules are
+           fixed physical products, so sizes are display-only below) -->
       <label class="block">
         <span class="text-xs text-gray-500">Width ({unitLabel()})</span>
-        <input 
-          type="number" 
-          value={displayValue(selectedFurniture.width ?? getCatalogItem(selectedFurniture.catalogId)?.width ?? 100)} 
+        <input
+          type="number"
+          value={displayValue(selectedFurniture.width ?? getCatalogItem(selectedFurniture.catalogId)?.width ?? 100)}
           oninput={onFurnitureWidth} min="1"
-          class="w-full px-2 py-1 border border-gray-200 rounded text-sm" 
+          class="w-full px-2 py-1 border border-gray-200 rounded text-sm"
         />
       </label>
       <label class="block">
         <span class="text-xs text-gray-500">Depth ({unitLabel()})</span>
-        <input 
-          type="number" 
-          value={displayValue(selectedFurniture.depth ?? getCatalogItem(selectedFurniture.catalogId)?.depth ?? 80)} 
+        <input
+          type="number"
+          value={displayValue(selectedFurniture.depth ?? getCatalogItem(selectedFurniture.catalogId)?.depth ?? 80)}
           oninput={onFurnitureDepth} min="1"
-          class="w-full px-2 py-1 border border-gray-200 rounded text-sm" 
+          class="w-full px-2 py-1 border border-gray-200 rounded text-sm"
         />
       </label>
       <label class="block">
         <span class="text-xs text-gray-500">Height ({unitLabel()})</span>
-        <input 
-          type="number" 
-          value={displayValue(selectedFurniture.height ?? getCatalogItem(selectedFurniture.catalogId)?.height ?? 80)} 
+        <input
+          type="number"
+          value={displayValue(selectedFurniture.height ?? getCatalogItem(selectedFurniture.catalogId)?.height ?? 80)}
           oninput={onFurnitureHeight} min="1"
-          class="w-full px-2 py-1 border border-gray-200 rounded text-sm" 
+          class="w-full px-2 py-1 border border-gray-200 rounded text-sm"
         />
       </label>
-      
+
+      {:else}
+      <!-- Read-only dimensions from the catalogue -->
+      <div>
+        <span class="text-xs text-gray-500">Dimensions (W × D × H, cm)</span>
+        <p class="text-sm text-gray-700 mt-0.5">
+          {Math.round(selectedFurniture.width ?? getCatalogItem(selectedFurniture.catalogId)?.width ?? 0)}
+          × {Math.round(selectedFurniture.depth ?? getCatalogItem(selectedFurniture.catalogId)?.depth ?? 0)}
+          × {Math.round(selectedFurniture.height ?? getCatalogItem(selectedFurniture.catalogId)?.height ?? 0)}
+        </p>
+      </div>
+      {/if}
+
+      {#if SHOW_HOUSE_FEATURES}
       <!-- Material -->
       <label class="block">
         <span class="text-xs text-gray-500">Material</span>
-        <select 
-          value={selectedFurniture.material ?? 'Wood'} 
-          onchange={onFurnitureMaterial} 
+        <select
+          value={selectedFurniture.material ?? 'Wood'}
+          onchange={onFurnitureMaterial}
           class="w-full px-2 py-1 border border-gray-200 rounded text-sm"
         >
           <option value="Wood">Wood</option>
@@ -617,15 +636,17 @@
           <option value="Ceramic">Ceramic</option>
         </select>
       </label>
-      
+
+      {/if}
+
       <!-- Rotation -->
       <label class="block">
         <span class="text-xs text-gray-500">Rotation (degrees)</span>
-        <input 
-          type="number" 
-          value={Math.round(selectedFurniture.rotation * 100) / 100} 
-          oninput={onFurnitureRotation} 
-          class="w-full px-2 py-1 border border-gray-200 rounded text-sm" 
+        <input
+          type="number"
+          value={Math.round(selectedFurniture.rotation * 100) / 100}
+          oninput={onFurnitureRotation}
+          class="w-full px-2 py-1 border border-gray-200 rounded text-sm"
         />
       </label>
 
@@ -642,6 +663,7 @@
           title="Rotate 90° right"
         >↻ 90°</button>
       </div>
+      {#if SHOW_HOUSE_FEATURES}
       <div class="flex gap-1">
         <button
           onclick={() => { if (selectedFurniture) { const s = selectedFurniture.scale; updateFurniture(selectedFurniture.id, { scale: { x: s.x * -1, y: s.y, z: s.z } }); } }}
@@ -654,7 +676,7 @@
           title="Flip vertically"
         >↕ Flip V</button>
       </div>
-      
+
       <!-- Reset button -->
       <button
         onclick={resetFurnitureDefaults}
@@ -662,6 +684,7 @@
       >
         Reset to defaults
       </button>
+      {/if}
     </div>
 
   {:else if selectedRoom}

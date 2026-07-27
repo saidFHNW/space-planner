@@ -9,6 +9,7 @@ import { getCatalogItem } from '$lib/utils/furnitureCatalog';
 import { getRoomPolygon } from '$lib/utils/roomDetection';
 import { wallPointAt } from '$lib/utils/canvasRenderer';
 import type { HandleType } from '$lib/utils/canvasInteraction';
+import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
 export function pointInPolygon(p: Point, poly: Point[]): boolean {
   let inside = false;
@@ -84,6 +85,9 @@ export function findHandleAt(
 
   const rotHandleDist = 18 / zoom;
   if (Math.abs(rx) < ht && Math.abs(ry - (-hd - rotHandleDist)) < ht) return 'rotate';
+
+  // VT modules are fixed-size products: no resize handles in the skatepark domain.
+  if (!SHOW_HOUSE_FEATURES) return null;
 
   if (Math.abs(rx - (-hw)) < ht && Math.abs(ry - (-hd)) < ht) return 'resize-tl';
   if (Math.abs(rx - hw) < ht && Math.abs(ry - (-hd)) < ht) return 'resize-tr';

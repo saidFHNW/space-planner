@@ -13,6 +13,7 @@ import { drawFurnitureIcon } from '$lib/utils/furnitureIcons';
 import { getRoomPolygon, roomCentroid } from '$lib/utils/roomDetection';
 import { getWallTextureCanvas, getFloorTextureCanvas } from '$lib/utils/textureGenerator';
 import { getTopdownImage, getModelFile } from './furnitureThumbnails';
+import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
 
 // ── Security zone (FR5): translucent halo around a module's footprint ──
@@ -909,6 +910,7 @@ export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected
     ctx.strokeRect(-w / 2 - 2, -d / 2 - 2, w + 4, d + 4);
     ctx.setLineDash([]);
 
+    if (SHOW_HOUSE_FEATURES) {
     const hs = 5;
     ctx.fillStyle = '#ffffff';
     ctx.strokeStyle = '#3b82f6';
@@ -924,6 +926,7 @@ export function drawFurnitureItem(cs: CanvasState, item: FurnitureItem, selected
     for (const [hx, hy] of [[0, -d/2], [0, d/2], [-w/2, 0], [w/2, 0]]) {
       ctx.fillRect(hx - ehs, hy - ehs, ehs * 2, ehs * 2);
       ctx.strokeRect(hx - ehs, hy - ehs, ehs * 2, ehs * 2);
+    }
     }
 
     const rotY = -d / 2 - 18;

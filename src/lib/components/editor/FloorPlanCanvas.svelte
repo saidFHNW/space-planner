@@ -2178,6 +2178,11 @@
         rotateFurniture(id, rot);
       }
       selectedElementId.set(id);
+      // Single-shot placement (same as drag & drop): back to select mode,
+      // otherwise every further click keeps placing modules and the
+      // select/deselect handlers are unreachable.
+      selectedTool.set('select');
+      placingFurnitureId.set(null);
       return;
     }
 
@@ -2498,6 +2503,14 @@
     markDirty();
     const rect = canvas.getBoundingClientRect();
     mousePos = screenToWorld(e.clientX - rect.left, e.clientY - rect.top);
+
+    // A drag state with no button pressed means the mouseup was missed
+    // (e.g. released outside the browser window). End the drag instead of
+    // gluing the element to the cursor.
+    if (e.buttons === 0 && (draggingFurnitureId || draggingMultiSelect || draggingHandle || draggingDoorId || draggingWindowId || draggingStairId || draggingColumnId || draggingWallEndpoint || draggingWallParallel || draggingCurveHandle || draggingRoomId || draggingRoomLabelId || draggingTextAnnotationId || isPanning || marqueeStart)) {
+      onMouseUp(e);
+      return;
+    }
 
     // Drag room label
     if (draggingRoomLabelId) {
@@ -3470,7 +3483,7 @@
   );
 </script>
 
-<svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
+<svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} on:mouseup={onMouseUp} />
 
 <div class="w-full h-full relative overflow-hidden" role="application">
     {#if conflictPairs.length > 0}
@@ -3498,7 +3511,6 @@
     style="cursor: {cursorStyle}"
     onmousedown={onMouseDown}
     onmousemove={onMouseMove}
-    onmouseup={onMouseUp}
     ondblclick={onDblClick}
     onwheel={onWheel}
     oncontextmenu={onContextMenu}

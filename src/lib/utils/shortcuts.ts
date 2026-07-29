@@ -2,6 +2,7 @@ import { selectedTool, undo, redo, viewMode, selectedElementId, selectedElementI
 import { get } from 'svelte/store';
 import { localStore } from '$lib/services/datastore';
 import { currentProject } from '$lib/stores/project';
+import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
 export interface ShortcutContext {
   rotateFurniture?: () => void;
@@ -58,8 +59,9 @@ export function handleGlobalShortcut(e: KeyboardEvent, ctx: ShortcutContext = {}
     }
     return true;
   }
-  if (e.key === 'w' || e.key === 'W') { selectedTool.set('wall'); panMode.set(false); return true; }
-  if (e.key === 'd' || e.key === 'D') { selectedTool.set('door'); panMode.set(false); return true; }
+  if (SHOW_HOUSE_FEATURES && (e.key === 'w' || e.key === 'W')) { selectedTool.set('wall'); panMode.set(false); return true; }
+  if (SHOW_HOUSE_FEATURES && (e.key === 'd' || e.key === 'D')) { selectedTool.set('door'); panMode.set(false); return true; }
+  if (SHOW_HOUSE_FEATURES && (e.key === 't' || e.key === 'T')) { selectedTool.set('text'); panMode.set(false); return true; }
   if (e.key === 'v' || e.key === 'V') { selectedTool.set('select'); panMode.set(false); return true; }
   if (e.key === 'h' || e.key === 'H') { panMode.set(true); return true; }
   if (e.key === 't' || e.key === 'T') { selectedTool.set('text'); panMode.set(false); return true; }

@@ -5,6 +5,7 @@
   import { exportDXF } from '$lib/utils/cadExport';
   import { get } from 'svelte/store';
   import { goto } from '$app/navigation';
+  import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   interface Props {
     open: boolean;
@@ -25,20 +26,24 @@
     action: () => void;
   };
 
-  const tools: ResultItem[] = [
+const tools: ResultItem[] = [
     { id: 't-select', name: 'Select Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('select') },
-    { id: 't-wall', name: 'Wall Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('wall') },
-    { id: 't-door', name: 'Door Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('door') },
-    { id: 't-window', name: 'Window Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('window') },
-    { id: 't-furniture', name: 'Furniture Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('furniture') },
-    { id: 't-text', name: 'Text Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('text') },
+    ...(SHOW_HOUSE_FEATURES ? [
+      { id: 't-wall', name: 'Wall Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('wall') },
+      { id: 't-door', name: 'Door Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('door') },
+      { id: 't-window', name: 'Window Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('window') },
+      { id: 't-text', name: 'Text Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('text') },
+    ] : []),
+    { id: 't-furniture', name: 'Module Tool', icon: '🔧', category: 'tool', categoryLabel: '🔧 Tool', action: () => selectedTool.set('furniture') },
   ];
 
   const actions: ResultItem[] = [
-    { id: 'a-export-svg', name: 'Export SVG', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportAsSVG(p); } },
-    { id: 'a-export-dxf', name: 'Export DXF', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportDXF(p); } },
-    { id: 'a-export-pdf', name: 'Export PDF', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportPDF(p); } },
-    { id: 'a-export-png', name: 'Export PNG', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const canvas = document.querySelector('canvas'); const p = get(currentProject); if (canvas && p) exportAsPNG(canvas, p); } },
+    ...(SHOW_HOUSE_FEATURES ? [
+      { id: 'a-export-svg', name: 'Export SVG', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportAsSVG(p); } },
+      { id: 'a-export-dxf', name: 'Export DXF', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportDXF(p); } },
+      { id: 'a-export-pdf', name: 'Export PDF', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportPDF(p); } },
+      { id: 'a-export-png', name: 'Export PNG', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const canvas = document.querySelector('canvas'); const p = get(currentProject); if (canvas && p) exportAsPNG(canvas, p); } },
+    ] : []),
     { id: 'a-export-json', name: 'Export JSON', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { const p = get(currentProject); if (p) exportAsJSON(p); } },
     { id: 'a-toggle-grid', name: 'Toggle Grid', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { window.dispatchEvent(new KeyboardEvent('keydown', { key: 'g', bubbles: true })); } },
     { id: 'a-toggle-snap', name: 'Toggle Snap', icon: '⚡', category: 'action', categoryLabel: '⚡ Action', action: () => { snapEnabled.update(v => !v); } },

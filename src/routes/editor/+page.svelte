@@ -8,6 +8,7 @@
   import LayersPanel from '$lib/components/sidebar/LayersPanel.svelte';
   import { preloadCatalogThumbnails } from '$lib/utils/furnitureThumbnails';
   import { thumbnailProgress } from '$lib/stores/thumbnailProgress';
+  import {SHOW_HOUSE_FEATURES} from "$lib/config/features";
 
   onMount(() => { preloadCatalogThumbnails(); });
 
@@ -162,16 +163,20 @@
               class="text-xs px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 transition-colors flex items-center gap-1.5"
               onclick={() => {
                 const text = [
-                  'KEYBOARD SHORTCUTS — Open3D Floorplan',
+                  'KEYBOARD SHORTCUTS — VT Space Planner',
                   '',
                   '── TOOLS ──',
                   'V          Select tool',
+                  ...(SHOW_HOUSE_FEATURES ? [
                   'W          Wall tool',
                   'D          Door tool',
+                  ] : []),
                   'H          Pan mode',
+                  ...(SHOW_HOUSE_FEATURES ? [
                   'M          Measure tool',
                   'N          Annotate tool',
                   'T          Text tool',
+                  ] : []),
                   'S          Toggle snap',
                   '',
                   '── EDIT ──',
@@ -202,10 +207,12 @@
                   'Scroll     Zoom in/out',
                   '+/-        Zoom in/out',
                   'Space+Drag Pan canvas',
+                  ...(SHOW_HOUSE_FEATURES ? [
                   '',
                   '── WALLS ──',
                   'Dbl-click  Finish wall chain',
                   'C          Close wall loop',
+                  ] : []),
                 ].join('\n');
                 navigator.clipboard.writeText(text);
               }}
@@ -230,12 +237,16 @@
               </div>
               <div class="space-y-1.5 mb-5">
                 <div class="flex justify-between"><span class="text-gray-600">Select tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">V</kbd></div>
+                {#if SHOW_HOUSE_FEATURES}
                 <div class="flex justify-between"><span class="text-gray-600">Wall tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">W</kbd></div>
                 <div class="flex justify-between"><span class="text-gray-600">Door tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">D</kbd></div>
+                {/if}
                 <div class="flex justify-between"><span class="text-gray-600">Pan mode</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">H</kbd></div>
+                {#if SHOW_HOUSE_FEATURES}
                 <div class="flex justify-between"><span class="text-gray-600">Measure tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">M</kbd></div>
                 <div class="flex justify-between"><span class="text-gray-600">Annotate tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">N</kbd></div>
                 <div class="flex justify-between"><span class="text-gray-600">Text tool</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">T</kbd></div>
+                {/if}
                 <div class="flex justify-between"><span class="text-gray-600">Toggle snap</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">S</kbd></div>
               </div>
 
@@ -295,7 +306,8 @@
                 <div class="flex justify-between"><span class="text-gray-600">Pan canvas</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">Space+Drag</kbd></div>
               </div>
 
-              <!-- Walls -->
+                {#if SHOW_HOUSE_FEATURES}
+                <!-- Walls -->
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-xs font-bold uppercase tracking-wider text-rose-500">Walls</span>
                 <div class="flex-1 h-px bg-rose-100"></div>
@@ -304,6 +316,7 @@
                 <div class="flex justify-between"><span class="text-gray-600">Finish wall chain</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">Dbl-click</kbd></div>
                 <div class="flex justify-between"><span class="text-gray-600">Close wall loop</span><kbd class="px-1.5 py-0.5 bg-gray-100 rounded text-xs font-mono text-slate-700 border border-gray-200">C</kbd></div>
               </div>
+                    {/if}
             </div>
           </div>
         </div>

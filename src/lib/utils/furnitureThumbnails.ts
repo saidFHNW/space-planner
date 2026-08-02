@@ -8,7 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { furnitureCatalog } from './furnitureCatalog';
 import { thumbnailProgress, topdownVersion } from '$lib/stores/thumbnailProgress';
 
-const CACHE_NAME = 'module-previews-v3'; // v3: purge previews poisoned by the concurrent-render race
+const CACHE_NAME = 'module-previews-v4';
 const SIZE = 128;
 const TOPDOWN_MAX = 768; // px on the longer footprint side; raise to 1024 if still soft
 const cache = new Map<string, string>();
@@ -148,7 +148,7 @@ export async function generateThumbnail(file: string): Promise<string | null> {
         scene!.add(model);
 
         // Fit camera to model
-        const box = new THREE.Box3().setFromObject(model);
+        const box = new THREE.Box3().setFromObject(model, true);
         const size = new THREE.Vector3();
         const center = new THREE.Vector3();
         box.getSize(size);
@@ -429,7 +429,7 @@ async function renderTopdown(file: string): Promise<string | null> {
 
   scene!.add(model);
 
-  const box = new THREE.Box3().setFromObject(model);
+  const box = new THREE.Box3().setFromObject(model, true);
   const size = new THREE.Vector3();
   const center = new THREE.Vector3();
   box.getSize(size);

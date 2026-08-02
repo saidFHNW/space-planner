@@ -210,7 +210,7 @@ function loadGLBModel(catalogId: string): Promise<THREE.Group | null> {
  */
 function scaleToFit(model: THREE.Group, def: FurnitureDef, mapping: ModelMapping): void {
   // Compute the model's bounding box
-  const box = new THREE.Box3().setFromObject(model);
+  const box = new THREE.Box3().setFromObject(model, true);
   const size = new THREE.Vector3();
   box.getSize(size);
 
@@ -223,7 +223,7 @@ function scaleToFit(model: THREE.Group, def: FurnitureDef, mapping: ModelMapping
     model.rotation.x = -Math.PI / 2;
     model.updateMatrixWorld(true);
     // Recompute bounding box after rotation
-    box.setFromObject(model);
+    box.setFromObject(model, true);
     box.getSize(size);
   }
 
@@ -236,7 +236,7 @@ function scaleToFit(model: THREE.Group, def: FurnitureDef, mapping: ModelMapping
   model.scale.set(scaleX, scaleY, scaleZ);
 
   // Re-center at origin after scaling
-  const scaledBox = new THREE.Box3().setFromObject(model);
+  const scaledBox = new THREE.Box3().setFromObject(model, true);
   const center = new THREE.Vector3();
   scaledBox.getCenter(center);
   model.position.sub(center);
@@ -244,7 +244,7 @@ function scaleToFit(model: THREE.Group, def: FurnitureDef, mapping: ModelMapping
   model.position.y -= scaledBox.min.y;
 
   // Recompute after repositioning
-  const finalBox = new THREE.Box3().setFromObject(model);
+  const finalBox = new THREE.Box3().setFromObject(model, true);
   model.position.y -= finalBox.min.y;
 }
 

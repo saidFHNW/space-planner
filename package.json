@@ -1,13 +1,13 @@
 {
-	"name": "open3dfloorplan",
+	"name": "vt-space-planner",
 	"private": true,
 	"version": "0.9.0",
-	"description": "Free open source 2D/3D floor plan editor — design in 2D, preview in 3D, all in your browser",
-	"author": "theLodgeStudio",
+	"description": "Browser-based space planner for modular skateparks (Vertical Technik AG), built on the MIT-licensed open3dFloorplan framework",
+	"author": "Said Fakhri",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/theLodgeBots/open3dFloorplan.git"
+		"url": "https://github.com/saidFHNW/space-planner.git"
 	},
 	"type": "module",
 	"scripts": {

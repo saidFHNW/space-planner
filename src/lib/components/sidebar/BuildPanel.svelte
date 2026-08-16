@@ -16,7 +16,9 @@
   import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
   // AreaSummaryPanel moved to top bar dialog
-  let activeTab = $state< 'area' | 'objects'>('objects');
+  // Opens on "Area": defining the plot is the first step of planning a park,
+  // and without it the boundary check cannot run.
+  let activeTab = $state< 'area' | 'objects'>('area');
   let constructionOpen = $state(true);
   let selectedCategory = $state<string>('All');
   let thumbsReady = $state(0); // increment to trigger reactivity

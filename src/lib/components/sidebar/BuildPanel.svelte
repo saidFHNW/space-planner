@@ -354,10 +354,12 @@ function removeArea() {
     <button
       class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'area' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
       onclick={() => activeTab = 'area'}
+      data-guide="tab-area"
     >Area</button>
     <button
       class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide {activeTab === 'objects' ? 'text-slate-800 border-b-2 border-blue-500 bg-blue-50' : 'text-gray-500 hover:text-gray-700'}"
       onclick={() => activeTab = 'objects'}
+      data-guide="tab-objects"
     >Objects</button>
   </div>
 

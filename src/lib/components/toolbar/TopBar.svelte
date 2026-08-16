@@ -301,7 +301,7 @@ function onExportPDF() {
   <div class="h-5 w-px bg-white/20"></div>
 
   <!-- 2D/3D pill toggle -->
-  <div class="flex bg-white/15 rounded-full p-0.5">
+  <div class="flex bg-white/15 rounded-full p-0.5" data-guide="topbar-view">
     <button
       onclick={() => setMode('2d')}
       class="px-3 py-1 text-xs font-semibold rounded-full transition-colors {mode === '2d' ? 'bg-white text-slate-800' : 'text-white/80 hover:text-white'}"
@@ -369,7 +369,7 @@ function onExportPDF() {
   <div class="h-5 w-px bg-white/20"></div>
 
   <!-- Export dropdown -->
-  <div class="relative" bind:this={exportRef}>
+  <div class="relative" bind:this={exportRef} data-guide="topbar-export">
     <button
       onclick={() => { exportOpen = !exportOpen; if (exportOpen) triggerTip('first-export', 300, 60); }}
       class="px-3 py-1.5 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded transition-colors flex items-center gap-1.5"

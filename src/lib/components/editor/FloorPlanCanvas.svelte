@@ -3507,6 +3507,7 @@
     bind:this={canvas}
     class="block w-full h-full"
     tabindex="0"
+    data-guide="editor-canvas"
     aria-label="Floor plan editor canvas"
     style="cursor: {cursorStyle}"
     onmousedown={onMouseDown}

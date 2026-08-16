@@ -18,6 +18,26 @@
   let showStarterModal = $state(false);
   import { SHOW_HOUSE_FEATURES } from '$lib/config/features';
 
+  // --- User guide (start page) ---
+  import GuideTour from '$lib/components/guide/GuideTour.svelte';
+  import HelpDialog from '$lib/components/guide/HelpDialog.svelte';
+  import { guideCopy } from '$lib/data/guideContent';
+  import { initGuide, getGuideLang, tourSeen, markTourSeen, resetTour } from '$lib/stores/guide.svelte';
+
+  let helpOpen = $state(false);
+  let tourOpen = $state(false);
+  let copy = $derived(guideCopy(getGuideLang()));
+
+  function finishTour() {
+    tourOpen = false;
+    markTourSeen('home');
+  }
+
+  function restartTour() {
+    resetTour('home');
+    tourOpen = true;
+  }
+
   onMount(async () => {
     projects = await localStore.list();
     // Sort by most recent
@@ -32,6 +52,11 @@
     if (SHOW_HOUSE_FEATURES && !seen && projects.length === 0) {
       showWelcome = true;
     }
+
+    // Start the guided tour on the first visit. The projects are loaded
+    // first, so the tour can decide whether the project-card step applies.
+    initGuide();
+    if (!showWelcome && !tourSeen('home')) tourOpen = true;
   });
 
   async function createFromTemplate(index: number) {
@@ -135,14 +160,25 @@
           Templates
         </button>
         {/if}
+        <button
+          onclick={() => helpOpen = true}
+          data-guide="home-help"
+          class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
+          title={copy.ui.helpTitle}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          {copy.ui.helpButton}
+        </button>
           <button
           onclick={() => showStarterModal = true}
+          data-guide="home-examples"
           class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
         >
           🛹 Example Layouts
         </button>
         <button
           onclick={newProject}
+          data-guide="home-new"
           class="px-5 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-semibold text-sm shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 flex items-center gap-2"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -152,7 +188,7 @@
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-6 py-8">
+  <div class="max-w-5xl mx-auto px-6 py-8" data-guide="home-projects">
     {#if projects.length === 0}
       <div class="text-center py-24">
         <div class="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -176,8 +212,11 @@
       </div>
     {:else}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {#each projects as project}
-          <div class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-200 relative">
+        {#each projects as project, projectIndex}
+          <div
+            class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-200 relative"
+            data-guide={projectIndex === 0 ? 'home-card' : undefined}
+          >
             <!-- Thumbnail -->
             <a href="/editor?id={project.id}" class="block">
               <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
@@ -314,4 +353,10 @@
     </div>
     {/if}
 </div>
+
+<!-- User guide -->
+{#if tourOpen}
+  <GuideTour steps={copy.tourHome} onFinish={finishTour} />
+{/if}
+<HelpDialog bind:open={helpOpen} sections={copy.panelHome} onRestartTour={restartTour} />
 

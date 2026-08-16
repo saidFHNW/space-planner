@@ -1,0 +1,86 @@
+SKU;Name;model unit;model W cm;model D cm;model H cm;catalogue W;catalogue D;catalogue H;flag;suggested dims (from model)
+K00181;Enclosure for Quaterpipe 1700 3m;mm;353;303;175;353;303;175;;
+K00536;Roof Box 600 + Handrail S;mm;132;518;105;132;518;105;;
+K00538;Roof Box 600 + Ledge;mm;182;510;100;182;510;100;;
+K00539;Roof Box 600 + Ledge + handrail;mm;290;518;105;290;518;105;;
+K00542;Roof Box 600 + Ledge + handrail;mm;440;517;106;440;517;106;;
+K00543;Roof Box 600 + Ledge + handrail + roof ledge;mm;520;518;105;520;518;105;;
+K00546;Roof Box 600 Pyramid + Handrail;mm;424;522;106;424;522;106;;
+K00612;Skatepark Fence;mm;654;12;111;654;12;111;;
+K00630;Minirampe 1600 9m + Right Extention 3,0m;mm;986;915;340;986;915;340;;
+K00654;Miniramp 1650 Hip mit left Ext + right Ext 3.0m;mm;1132;1125;350;1132;1125;350;;
+K00681;Foot Plate for Fence;cm;2175;51;1103;218;5;110;MISMATCH x10.3;"width ""2175"", length ""51"", height ""1103"""
+K00682;Double Foot Plate for Fence;mm;441;12;111;441;12;111;;
+K00687;Türschliesser;mm;720;88;125;720;88;125;;
+K00690;Banana Curb 300 x 1300 x 2600;cm;2620;1325;300;262;132;30;MISMATCH x10.0;"width ""2620"", length ""1325"", height ""300"""
+K00700;Support for info panel 50x80;cm;140;578;2002;14;58;200;MISMATCH x10.0;"width ""140"", length ""578"", height ""2002"""
+K00701;Support for info panel 70x100;cm;140;778;2002;14;78;200;MISMATCH x10.0;"width ""140"", length ""778"", height ""2002"""
+K00703;Flange with ground sleeve and foundation;cm;250;250;515;25;25;52;MISMATCH x10.0;"width ""250"", length ""250"", height ""515"""
+K00709;Revision UFB QP 1500 3m;mm;373;311;271;373;311;271;;
+K00714;Pillar 2.5m;cm;200;200;2588;20;20;259;MISMATCH x10.0;"width ""200"", length ""200"", height ""2588"""
+K00717;Pillar 2.0m;cm;200;200;2088;20;20;209;MISMATCH x10.0;"width ""200"", length ""200"", height ""2088"""
+K00747;Parking Block;m;15;100;10;0;0;0;ZERO DIMS;"width ""15"", length ""100"", height ""10"""
+K00787;Exchange Under Riding Surface Quarterpipe 1500x3m;mm;373;311;271;373;311;271;;
+K00796;Enclosure for Quarterpipe Combo 1700 - 2000;mm;389;600;218;389;600;218;;
+K00805;C2 Fuss;cm;20;40;40;2;4;4;MISMATCH x10.0;"width ""20"", length ""40"", height ""40"""
+K00831;A-Frame;m;150;328;35;0;0;0;ZERO DIMS;"width ""150"", length ""328"", height ""35"""
+K00834;Granit Curved Curb;m;310;81;38;0;0;0;ZERO DIMS;"width ""310"", length ""81"", height ""38"""
+K00835;Granit Bank;m;300;253;80;0;0;0;ZERO DIMS;"width ""300"", length ""253"", height ""80"""
+K00836;Granit Bank Curb;m;300;292;50;0;0;0;ZERO DIMS;"width ""300"", length ""292"", height ""50"""
+K00837;Granit Kicker;m;150;164;35;0;0;0;ZERO DIMS;"width ""150"", length ""164"", height ""35"""
+K00838;Manual Pad;m;240;120;20;0;0;0;ZERO DIMS;"width ""240"", length ""120"", height ""20"""
+K00840;Granite Spine;m;300;181;41;0;0;0;ZERO DIMS;"width ""300"", length ""181"", height ""41"""
+K00842;Granit Rail;m;300;6;60;0;0;0;ZERO DIMS;"width ""300"", length ""6"", height ""60"""
+K00843;Step Curb 3;m;239;350;40;0;0;0;ZERO DIMS;"width ""239"", length ""350"", height ""40"""
+K00844;Step Curb 4;m;239;480;40;0;0;0;ZERO DIMS;"width ""239"", length ""480"", height ""40"""
+K00849;Miniramp 1600 Hip mit Ext 900;mm;1291;1716;389;1291;1716;389;;
+K00857;Poolcoping ersetzten;cm;1090;2873;55;109;287;5;MISMATCH x11.0;"width ""1090"", length ""2873"", height ""55"""
+K00871;Enclosure Minirampe 1600 9m + Right Extention 3,0m Offset;mm;1037;915;340;1037;915;340;;
+K00878;Wheelie Table 400 3m Granit;mm;308;140;48;308;140;48;;
+K00879;Wheelie Table 300 3m Granit;mm;308;140;38;308;140;38;;
+K00880;Granit Upgrade Wheelie Table 200 3m + Rail;mm;500;145;40;500;145;40;;
+K00885;Granit Upgrade Wheelie Table 300 3m;mm;308;140;28;308;140;28;;
+K00887;Granit Upgrade Wheelie Table steel 200 x 2.5m + Stone Ledge;cm;2570;1656;530;257;166;53;MISMATCH x10.0;"width ""2570"", length ""1656"", height ""530"""
+K00906;Planter with Granite Curbs 1 Tree;m;327;323;560;0;0;1;ZERO DIMS;"width ""327"", length ""323"", height ""560"""
+K00907;Planter with Granite Curbs 3 Tree;m;728;335;560;1;0;1;ZERO DIMS;"width ""728"", length ""335"", height ""560"""
+K01413;Halfpipe Kingsize4 4500 9.0m;mm;1453;1031;569;1453;1031;569;;
+K01418;Support with info panel 70x100;cm;140;778;2002;14;78;200;MISMATCH x10.0;"width ""140"", length ""778"", height ""2002"""
+K01419;Info panel 50x80 with support (Verzinkt);cm;574;151;2828;57;15;283;MISMATCH x10.1;"width ""574"", length ""151"", height ""2828"""
+K01434;Granit Manual table 400 x 4700;m;120;470;40;0;0;0;ZERO DIMS;"width ""120"", length ""470"", height ""40"""
+K01470;Exchange Under Riding Surface Microramp 950x3.96m;mm;827;394;96;827;394;96;;
+K01476;Exchange Under Riding Surface QP 1700x3m;mm;369;311;293;369;311;293;;
+K01479;Flag Pole (powder coated) with Info Panel;cm;60;574;2874;6;57;287;MISMATCH x10.1;"width ""60"", length ""574"", height ""2874"""
+K01484;Flagpole;cm;574;140;2878;57;14;288;MISMATCH x10.1;"width ""574"", length ""140"", height ""2878"""
+K01511;Granit Manual table 350;cm;1200;2400;350;120;240;35;MISMATCH x10.0;"width ""1200"", length ""2400"", height ""350"""
+K01534;Support for 2 info panel (70x100 and 50x80) with info panels;cm;1074;140;2878;107;14;288;MISMATCH x10.0;"width ""1074"", length ""140"", height ""2878"""
+K01535;Support for 2 info panel (70x100 and 50x80);cm;1074;140;2878;107;14;288;MISMATCH x10.0;"width ""1074"", length ""140"", height ""2878"""
+K01537;Sitzbank aus Granit 3m;m;299;50;40;0;0;0;ZERO DIMS;"width ""299"", length ""50"", height ""40"""
+K01538;Winkel Deckel anschweissen;mm;373;311;293;373;311;293;;
+K01553;Step Curb 5;m;169;480;40;0;0;0;ZERO DIMS;"width ""169"", length ""480"", height ""40"""
+K01554;Step Curb 6;m;100;480;40;0;0;0;ZERO DIMS;"width ""100"", length ""480"", height ""40"""
+K01559;Infotafel;cm;1339;200;1800;134;20;180;MISMATCH x10.0;"width ""1339"", length ""200"", height ""1800"""
+K01564;Bank 950 25° 6m with Granit Curb;mm;366;601;217;366;601;217;;
+K01585;Granit Curb Lite 350 3.0m;cm;2990;500;350;299;50;35;MISMATCH x10.0;"width ""2990"", length ""500"", height ""350"""
+K01586;Granit Curb Lite 300 3.0m;cm;2990;500;300;299;50;30;MISMATCH x10.0;"width ""2990"", length ""500"", height ""300"""
+K01596;Storage room with door and KABA lock;mm;901;613;252;901;613;252;;
+K01597;Granit Stone Ledge 350 500x3000;m;300;50;35;0;0;0;ZERO DIMS;"width ""300"", length ""50"", height ""35"""
+K02004;Granite Wheelie Table combo 300-500 PLO;m;240;670;50;0;1;0;ZERO DIMS;"width ""240"", length ""670"", height ""50"""
+K02006;Protective pad;cm;1000;1000;85;100;100;8;MISMATCH x10.6;"width ""1000"", length ""1000"", height ""85"""
+K02012;Microrampe 950 3.96m + Stellfüssen + Geländer;mm;835;405;224;835;405;224;;
+K02027;Granit Curb 300 3.0m;cm;2990;500;300;299;50;30;MISMATCH x10.0;"width ""2990"", length ""500"", height ""300"""
+K02028;Granit Curb 350 3.0m;cm;2990;500;350;299;50;35;MISMATCH x10.0;"width ""2990"", length ""500"", height ""350"""
+K02029;Granit Curb 400 3.0m;cm;2990;500;400;299;50;40;MISMATCH x10.0;"width ""2990"", length ""500"", height ""400"""
+K02031;Miniramp1100 6m + Ext.1.5m + Bank with Granite Curb;mm;612;1159;282;612;1159;282;;
+K02033;Geländer zu K01564 Bank Granite Curb;mm;366;606;206;366;606;206;;
+K02042;Miniramp Spine 1100 mit Wave;mm;1448;539;227;1448;539;227;;
+K02043;Street Wave 500 2.4m;mm;339;242;49;339;242;49;;
+K02044;Geländer Bank 950 25° 2.64m Hip 30°;mm;439;495;207;439;495;207;;
+K02045;Bank 950 25° 2 x 2.64m Hip 30° with railing;mm;441;499;215;441;499;215;;
+K02046;Miniramp 1100 mit Wave;mm;1448;273;227;1448;273;227;;
+K02075;Granite Wheelie Table round 400 200 3000;m;300;300;40;0;0;0;ZERO DIMS;"width ""300"", length ""300"", height ""40"""
+K02076;Granite Wheelie Table round 400 3000;cm;1500;3000;400;150;300;40;MISMATCH x10.0;"width ""1500"", length ""3000"", height ""400"""
+K02077;Granite Wheelie Table round 200 3000;cm;1500;3000;200;150;300;20;MISMATCH x10.0;"width ""1500"", length ""3000"", height ""200"""
+K02082;Parking Block 2m;m;15;200;10;0;0;0;ZERO DIMS;"width ""15"", length ""200"", height ""10"""
+K02085;Granite Wheelie Table 350 x 800 x 4700;m;83;470;35;0;0;0;ZERO DIMS;"width ""83"", length ""470"", height ""35"""
+K02086;Granite Wheelie Table 200 x 800 x 3500;m;80;350;20;0;0;0;ZERO DIMS;"width ""80"", length ""350"", height ""20"""
+K02093;Zaunstück;mm;889;5;149;889;5;149;;
